@@ -1,5 +1,7 @@
 "use client"
 
+import Navbar from "@/components/Navbar"
+
 export default function LandingPage() {
   const handleIONRedirect = () => {
     window.open("https://ionplustv.com/", "_blank", "noopener,noreferrer")
@@ -11,6 +13,8 @@ export default function LandingPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black relative overflow-hidden flex items-center justify-center">
+      <Navbar />
+
       {/* Subtle background pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,140,0,0.03),transparent_50%)]"></div>
 
@@ -23,9 +27,7 @@ export default function LandingPage() {
         <div className="w-24 h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent mb-12 animate-pulse"></div>
 
         <div className="mb-8">
-          <div className="bg-white px-8 py-3 rounded-md shadow-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-orange-600 tracking-tight">CNBC</h1>
-          </div>
+          
         </div>
 
         {/* Main headline */}

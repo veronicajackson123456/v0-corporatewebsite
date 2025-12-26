@@ -1,5 +1,6 @@
 "use client"
 
+import Navbar from "@/components/Navbar"
 import type React from "react"
 import { useState } from "react"
 import { Mail, MapPin, Phone, Send, Building, Globe, MessageSquare } from "lucide-react"
@@ -67,6 +68,8 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Navbar />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-orange-600 py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10">

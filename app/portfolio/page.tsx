@@ -1,5 +1,6 @@
 "use client"
 
+import Navbar from "@/components/Navbar"
 import { useState } from "react"
 import { Play, Film, Award } from "lucide-react"
 import SpotlightProject from "@/components/Spotlight"
@@ -241,6 +242,8 @@ export default function FilmPortfolioPage() {
 
   return (
     <div className="min-h-screen bg-white">
+      <Navbar />
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-orange-600 py-20 md:py-32 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
