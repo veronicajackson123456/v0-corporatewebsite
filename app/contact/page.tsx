@@ -270,7 +270,7 @@ export default function ContactPage() {
                           <p className="text-sm font-semibold text-gray-600 uppercase tracking-wider">
                             Advertising/Sponsorship
                           </p>
-                          <p className="text-gray-800 font-medium">CNBC FINANCE OFFICE LTD, UK</p>
+                          <p className="text-gray-800 font-medium">HMCFO LTD        </p>
                         </div>
                       </div>
                     </div>
