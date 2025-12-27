@@ -50,7 +50,7 @@ export default function ContactPage() {
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email",
-      content: "info@cnbc.uk.com",
+      content: "cnbc.jp@gmail.com",
       link: "mailto:info@cnbc.uk.com",
     },
     {

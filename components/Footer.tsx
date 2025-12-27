@@ -31,7 +31,7 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-white/80 text-sm md:text-base">
                 <Mail className="w-5 h-5 mt-0.5 text-white flex-shrink-0" />
-                <span>info@cnbc.uk.com</span>
+                <span>cnbc.jp@gmail.com</span>
               </li>
 
               <li className="flex items-start gap-3 text-white/80 text-sm md:text-base">
