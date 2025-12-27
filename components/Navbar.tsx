@@ -27,7 +27,7 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 md:px-8">
         <div className="flex items-center justify-between h-16 md:h-18">
-          {/* Logo */}
+          {/* Logo - Left Side */}
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center space-x-2 group">
               <div className="bg-white px-4 py-1.5 rounded-md shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
@@ -36,8 +36,8 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+          {/* Desktop Navigation Links - Center */}
+          <div className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-8 absolute left-1/2 transform -translate-x-1/2">
             <a
               href="/home"
               className="relative text-white text-sm font-semibold tracking-wide hover:text-orange-100 transition-colors duration-300 uppercase group"
@@ -59,6 +59,19 @@ export default function Navbar() {
             >
               Contact
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
+            </a>
+          </div>
+
+          <div className="hidden lg:flex flex-shrink-0">
+            <a
+              href="https://ionplustv.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center space-x-2 group"
+            >
+              <div className="bg-white px-4 py-1.5 rounded-md shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
+                <h1 className="text-xl md:text-2xl font-bold text-blue-600 tracking-tight">ION</h1>
+              </div>
             </a>
           </div>
 
@@ -99,6 +112,15 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
+            </a>
+            <a
+              href="https://ionplustv.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-white text-sm font-semibold tracking-wide hover:text-blue-200 hover:bg-white/10 px-4 py-2.5 rounded-md transition-all duration-300 uppercase"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              ION Plus
             </a>
           </div>
         </div>

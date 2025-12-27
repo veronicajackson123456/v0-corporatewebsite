@@ -73,7 +73,7 @@ export default function SpotlightProject() {
                   <MapPin className="w-5 h-5 text-orange-600" />
                   <span className="text-gray-600 text-sm uppercase tracking-wide">Location</span>
                 </div>
-                <p className="text-xl font-bold text-gray-900">Marbella, Spain</p>
+                <p className="text-xl font-bold text-gray-900">USA, Spain, UK </p>
               </div>
 
               <div className="bg-orange-50 border border-orange-200 rounded-xl p-6 col-span-2 shadow-md">

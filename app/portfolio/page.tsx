@@ -274,13 +274,10 @@ export default function FilmPortfolioPage() {
 
             <div className="flex flex-wrap gap-6 text-white">
               <div className="flex items-center gap-2">
-                <div className="w-12 h-0.5 bg-white"></div>
-                <span className="text-sm font-semibold uppercase tracking-wider">18 Featured Projects</span>
+                
+                <span className="text-sm font-semibold uppercase tracking-wider">For Sponsorship, Investment or Advertising opportunities&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; please contact info@hmcfo.cc (www.hmcfo.cc)</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-12 h-0.5 bg-white"></div>
-                <span className="text-sm font-semibold uppercase tracking-wider">12+ Awards</span>
-              </div>
+              
             </div>
           </div>
         </div>

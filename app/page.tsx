@@ -32,10 +32,10 @@ export default function LandingPage() {
 
         {/* Main headline */}
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-center">
-          <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-white via-gray-200 to-white bg-clip-text text-transparent font-sans">
             Welcome to{" "}
           </span>
-          <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-orange-500 via-orange-400 to-orange-500 bg-clip-text text-transparent font-sans">
             CNBC
           </span>
         </h1>

@@ -56,10 +56,10 @@ export default function TermsConditionsPage() {
     },
     {
       icon: <ExternalLink className="w-6 h-6" />,
-      title: "4. Cancellation & Refund Policy",
+      title: "4. Cancellation and Refund Policy",
       content: [
         {
-          text: "Our Cancellation & Refund Policy applies to all services. Please refer to the full policy here.",
+          text: "Our Cancellation and Refund Policy applies to all services. Please refer to the full policy here.",
         },
       ],
     },
@@ -162,7 +162,7 @@ export default function TermsConditionsPage() {
             <div className="flex items-center gap-4 text-white/80 text-sm">
               <span className="font-semibold">Version 1.0</span>
               <span>|</span>
-              <span>Last Updated: {new Date().toLocaleDateString()}</span>
+              
             </div>
           </div>
         </div>
@@ -176,7 +176,7 @@ export default function TermsConditionsPage() {
               <p className="text-gray-800 leading-relaxed">
                 Welcome to CNBC LLC. By accessing or using our website{" "}
                 <a href="https://www.cnbc.uk.com" className="text-orange-600 font-semibold hover:underline">
-                  www.cnbc.uk.com
+                  www.corporatenetworkbroadcastingcinema.com
                 </a>{" "}
                 (the "Site"), you agree to comply with these Terms & Conditions ("Terms"). If you do not agree with any
                 part of these Terms, please refrain from using our services.
