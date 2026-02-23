@@ -98,7 +98,7 @@ export default function SponsorsPage() {
               <div className="flex justify-center mb-8 md:mb-10">
                 <div className="bg-white rounded-2xl p-8 md:p-12 shadow-xl transform transition-transform duration-300 group-hover:scale-105">
                   <img
-                    src="https://www.abbvie.com/content/dam/abbvie-dotcom/uploads/abbvie-logo-knockout.svg"
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202026-02-23%20170824-xLdr2cjQYl79YfxMdX7sZyNKgyZy1P.png"
                     alt="AbbVie Logo"
                     className="h-16 md:h-20 w-auto"
                   />
@@ -188,10 +188,14 @@ export default function SponsorsPage() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
-            {/* Replace with actual trailer embed */}
-            <div className="w-full h-full flex items-center justify-center text-white">
-              <p className="text-xl">Trailer embed would go here</p>
-            </div>
+            {/* Trailer Video Embed */}
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/MV7YKZ3EACE?autoplay=1"
+              title="Corporate Giants - Behind the Scenes of Fortune 500 Companies"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       )}
