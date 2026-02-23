@@ -189,13 +189,18 @@ export default function SponsorsPage() {
               </svg>
             </button>
             {/* Trailer Video Embed */}
-            <iframe
+            <video
               className="w-full h-full"
-              src="https://www.youtube.com/embed/MV7YKZ3EACE?autoplay=1"
-              title="Corporate Giants - Behind the Scenes of Fortune 500 Companies"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+              controls
+              autoPlay
+              controlsList="nodownload"
+            >
+              <source
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CNBC%20-%20Film%20Production%20and%20Broadcasting-xbLKorFLidQUkqigqm6yKa1UXNTnPw.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
           </div>
         </div>
       )}

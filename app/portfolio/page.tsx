@@ -66,8 +66,8 @@ export default function FilmPortfolioPage() {
       description: "Behind the scenes of Fortune 500 companies",
       image: "3.jpg",
       awards: ["Sundance Selection"],
-      mediaType: "youtube",
-      youtubeId: "MV7YKZ3EACE",
+      mediaType: "video",
+      videoUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CNBC%20-%20Film%20Production%20and%20Broadcasting-xbLKorFLidQUkqigqm6yKa1UXNTnPw.mp4",
     },
     {
       id: 4,
