@@ -67,7 +67,7 @@ export default function FilmPortfolioPage() {
       image: "3.jpg",
       awards: ["Sundance Selection"],
       mediaType: "video",
-      videoUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/v1-lqT4FvziCoG4wt5kOHLMApPIQXNy7V.mp4",
+      videoUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/CNBC%20-%20Film%20Production%20and%20Broadcasting-xbLKorFLidQUkqigqm6yKa1UXNTnPw.mp4",
     },
     {
       id: 4,
