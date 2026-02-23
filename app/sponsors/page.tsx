@@ -133,6 +133,68 @@ export default function SponsorsPage() {
         </div>
       </section>
 
+      {/* Sponsors List Section */}
+      <section className="relative py-16 md:py-24 bg-zinc-800/30">
+        <div className="container mx-auto px-6 md:px-12 lg:px-16">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 tracking-tight">
+              Supporting <span className="text-orange-500">Partners</span>
+            </h2>
+            <div className="w-32 h-1 bg-gradient-to-r from-orange-600 via-orange-500 to-orange-400 mx-auto"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {/* Prestige Pawnbrokers */}
+            <div className="group backdrop-blur-sm bg-zinc-900/60 border border-orange-500/20 rounded-2xl p-8 transition-all duration-300 hover:border-orange-500/50 hover:shadow-[0_0_40px_rgba(255,140,0,0.2)]">
+              <div className="flex flex-col items-center">
+                <div className="bg-white rounded-xl p-6 mb-6 w-full flex items-center justify-center min-h-[120px] transform transition-transform duration-300 group-hover:scale-105">
+                  <img
+                    src="/prestige-pawnbrokers-logo.jpg"
+                    alt="Prestige Pawnbrokers"
+                    className="h-24 w-auto"
+                  />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-white text-center">
+                  Prestige Pawnbrokers
+                </h3>
+                <a
+                  href="https://www.prestigepawnbrokers.co.uk"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 text-orange-400 hover:text-orange-300 transition-colors duration-300 flex items-center gap-2"
+                >
+                  Visit Website <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            {/* PNS UK */}
+            <div className="group backdrop-blur-sm bg-zinc-900/60 border border-orange-500/20 rounded-2xl p-8 transition-all duration-300 hover:border-orange-500/50 hover:shadow-[0_0_40px_rgba(255,140,0,0.2)]">
+              <div className="flex flex-col items-center">
+                <div className="bg-white rounded-xl p-6 mb-6 w-full flex items-center justify-center min-h-[120px] transform transition-transform duration-300 group-hover:scale-105">
+                  <img
+                    src="/pnsuk-logo.jpg"
+                    alt="PNS UK"
+                    className="h-24 w-auto"
+                  />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-white text-center">
+                  PNS UK
+                </h3>
+                <a
+                  href="https://www.pnsuk.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 text-orange-400 hover:text-orange-300 transition-colors duration-300 flex items-center gap-2"
+                >
+                  Visit Website <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA Section */}
       <section className="relative py-16 md:py-24">
         <div className="container mx-auto px-6 md:px-12 lg:px-16">
