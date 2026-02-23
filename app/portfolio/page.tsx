@@ -66,8 +66,8 @@ export default function FilmPortfolioPage() {
       description: "Behind the scenes of Fortune 500 companies",
       image: "3.jpg",
       awards: ["Sundance Selection"],
-      mediaType: "video",
-      videoUrl: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/v1-lqT4FvziCoG4wt5kOHLMApPIQXNy7V.mp4",
+      mediaType: "youtube",
+      youtubeId: "MV7YKZ3EACE",
     },
     {
       id: 4,
