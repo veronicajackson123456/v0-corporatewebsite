@@ -197,7 +197,7 @@ export default function SponsorsPage() {
               <div className="flex flex-col items-center">
                 <div className="bg-white rounded-xl p-6 mb-6 w-full flex items-center justify-center min-h-[120px] transform transition-transform duration-300 group-hover:scale-105">
                   <img
-                    src="/5counties-logo.jpg"
+                    src="/coxalls-logo.png"
                     alt="5 Counties Contracting Ltd"
                     className="h-24 w-auto"
                   />
@@ -221,7 +221,7 @@ export default function SponsorsPage() {
               <div className="flex flex-col items-center">
                 <div className="bg-white rounded-xl p-6 mb-6 w-full flex items-center justify-center min-h-[120px] transform transition-transform duration-300 group-hover:scale-105">
                   <img
-                    src="/emc-logo.jpg"
+                    src="/emc-logo.png"
                     alt="Electrical Mechanical & Cooling Ltd"
                     className="h-24 w-auto"
                   />
@@ -245,7 +245,7 @@ export default function SponsorsPage() {
               <div className="flex flex-col items-center">
                 <div className="bg-white rounded-xl p-6 mb-6 w-full flex items-center justify-center min-h-[120px] transform transition-transform duration-300 group-hover:scale-105">
                   <img
-                    src="/elbb-logo.jpg"
+                    src="/stagecoach-logo.png"
                     alt="East London Bus & Coach Company"
                     className="h-24 w-auto"
                   />
