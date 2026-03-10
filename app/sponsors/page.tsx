@@ -287,6 +287,30 @@ export default function SponsorsPage() {
                 </a>
               </div>
             </div>
+
+            {/* Lime Leasing Ltd */}
+            <div className="group backdrop-blur-sm bg-zinc-900/60 border border-orange-500/20 rounded-2xl p-8 transition-all duration-300 hover:border-orange-500/50 hover:shadow-[0_0_40px_rgba(255,140,0,0.2)]">
+              <div className="flex flex-col items-center">
+                <div className="bg-white rounded-xl p-6 mb-6 w-full flex items-center justify-center min-h-[120px] transform transition-transform duration-300 group-hover:scale-105">
+                  <img
+                    src="/lime-leasing-logo.png"
+                    alt="Lime Leasing Ltd"
+                    className="h-24 w-auto"
+                  />
+                </div>
+                <h3 className="text-xl md:text-2xl font-bold text-white text-center">
+                  Lime Leasing Ltd
+                </h3>
+                <a
+                  href="https://www.limeleasing.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-4 text-orange-400 hover:text-orange-300 transition-colors duration-300 flex items-center gap-2"
+                >
+                  Visit Website <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
