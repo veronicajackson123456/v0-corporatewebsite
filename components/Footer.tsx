@@ -46,6 +46,11 @@ export default function Footer() {
             <h4 className="text-white font-bold text-lg mb-4 tracking-wide">Legal</h4>
             <ul className="space-y-2">
               <li>
+                <a href="/terms" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300">
+                  Terms of Service
+                </a>
+              </li>
+              <li>
                 <a href="/privacy-policy" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300">
                   Privacy Policy
                 </a>
@@ -63,6 +68,11 @@ export default function Footer() {
               <li>
                 <a href="/disclaimer" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300">
                   Disclaimer
+                </a>
+              </li>
+              <li>
+                <a href="/cancellation-refund" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300">
+                  Refund Policy
                 </a>
               </li>
             </ul>
@@ -100,12 +110,20 @@ export default function Footer() {
                 Privacy Policy
               </a>
               <span className="hidden md:inline text-white/60">|</span>
-              <a href="/cancellation-refund" className="hover:text-white transition-colors duration-300">
-                Refund Policy
+              <a href="/cookie-policy" className="hover:text-white transition-colors duration-300">
+                Cookie Policy
               </a>
               <span className="hidden md:inline text-white/60">|</span>
-              <a href="/cookie-policy" className="hover:text-white transition-colors duration-300">
-                Cookies
+              <a href="/accessibility-statement" className="hover:text-white transition-colors duration-300">
+                Accessibility
+              </a>
+              <span className="hidden md:inline text-white/60">|</span>
+              <a href="/disclaimer" className="hover:text-white transition-colors duration-300">
+                Disclaimer
+              </a>
+              <span className="hidden md:inline text-white/60">|</span>
+              <a href="/cancellation-refund" className="hover:text-white transition-colors duration-300">
+                Refund Policy
               </a>
             </div>
           </div>
