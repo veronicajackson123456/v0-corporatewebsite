@@ -246,8 +246,8 @@ export default function CancellationRefundPage() {
                   <p className="text-gray-700 leading-relaxed">
                     For any questions or concerns regarding cancellations or refunds, please contact our customer
                     support team at{" "}
-                    <a href="mailto:support@cnbc.uk.com" className="text-orange-600 font-semibold hover:underline">
-                      support@cnbc.uk.com
+                    <a href="mailto:cnbc.jp@gmail.com" className="text-orange-600 font-semibold hover:underline">
+                      cnbc.jp@gmail.com
                     </a>
                   </p>
                 </div>

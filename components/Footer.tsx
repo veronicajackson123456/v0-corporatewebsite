@@ -40,6 +40,43 @@ export default function Footer() {
               </li>
             </ul>
           </div>
+
+          {/* Legal Links */}
+          <div>
+            <h4 className="text-white font-bold text-lg mb-4 tracking-wide">Legal</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="/terms" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300">
+                  Terms of Service
+                </a>
+              </li>
+              <li>
+                <a href="/privacy-policy" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="/cookie-policy" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300">
+                  Cookie Policy
+                </a>
+              </li>
+              <li>
+                <a href="/accessibility-statement" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300">
+                  Accessibility
+                </a>
+              </li>
+              <li>
+                <a href="/disclaimer" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300">
+                  Disclaimer
+                </a>
+              </li>
+              <li>
+                <a href="/cancellation-refund" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300">
+                  Refund Policy
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
@@ -62,14 +99,31 @@ export default function Footer() {
 
           {/* Copyright + Links */}
           <div className="flex flex-col md:flex-row items-center justify-center gap-2 text-[11px] md:text-xs text-white/80">
-            <span>Copyright © {currentYear} Film Production and Broadcasting</span>
+            <span>Copyright © {currentYear} CNBC LLC</span>
             <span className="hidden md:inline text-white/60">•</span>
-            <div className="flex items-center gap-4">
-              <a href="/cancellation-refund" className="hover:text-white transition-colors duration-300">
-                Refund and Cancelation Policy
-              </a>
+            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
               <a href="/terms" className="hover:text-white transition-colors duration-300">
                 Terms of Service
+              </a>
+              <span className="hidden md:inline text-white/60">|</span>
+              <a href="/privacy-policy" className="hover:text-white transition-colors duration-300">
+                Privacy Policy
+              </a>
+              <span className="hidden md:inline text-white/60">|</span>
+              <a href="/cookie-policy" className="hover:text-white transition-colors duration-300">
+                Cookie Policy
+              </a>
+              <span className="hidden md:inline text-white/60">|</span>
+              <a href="/accessibility-statement" className="hover:text-white transition-colors duration-300">
+                Accessibility
+              </a>
+              <span className="hidden md:inline text-white/60">|</span>
+              <a href="/disclaimer" className="hover:text-white transition-colors duration-300">
+                Disclaimer
+              </a>
+              <span className="hidden md:inline text-white/60">|</span>
+              <a href="/cancellation-refund" className="hover:text-white transition-colors duration-300">
+                Refund Policy
               </a>
             </div>
           </div>
