@@ -2,7 +2,6 @@
 
 import { useState } from "react"
 import { ChevronRight } from "lucide-react"
-
 export default function MysterySlider() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -82,13 +81,7 @@ export default function MysterySlider() {
                     {slide.description}
                   </p>
 
-                  {/* Button */}
-                  <div className="flex justify-center lg:justify-start">
-                    <button className="group relative bg-white text-orange-600 font-bold text-sm md:text-base px-8 py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl uppercase tracking-wide overflow-hidden hover:bg-orange-50">
-                      Learn More
-                      <ChevronRight className="inline-block w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                    </button>
-                  </div>
+
                 </div>
 
                 {/* Right Image - always visible */}
