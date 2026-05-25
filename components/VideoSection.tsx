@@ -39,14 +39,12 @@ export default function VideoSection() {
           {videos.map((video) => (
             <div key={video.id} className="flex flex-col gap-4">
               {/* Video Player — native controls include play/pause/mute/fullscreen */}
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black aspect-video" style={{ WebkitBackdropFilter: 'blur(10px)' }}>
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-black aspect-video">
                 <video
                   className="w-full h-full object-cover"
                   controls
-                  controlsList="nodownload"
                   playsInline
                   preload="metadata"
-                  allowFullScreen
                 >
                   <source src={video.url} type="video/mp4" />
                   Your browser does not support the video tag.
