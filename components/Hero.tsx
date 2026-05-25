@@ -62,13 +62,6 @@ export default function HeroWithNavbar() {
   ]
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 10000)
-    return () => clearInterval(timer)
-  }, [slides.length])
-
-  useEffect(() => {
     if (videoRef.current && slides[currentSlide].type === "video") {
       if (isPlaying) {
         videoRef.current.play()
@@ -163,6 +156,8 @@ export default function HeroWithNavbar() {
                       muted={isMuted}
                       loop
                       playsInline
+                      disablePictureInPicture
+                      onContextMenu={(e) => e.preventDefault()}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent pointer-events-none"></div>
                   </div>

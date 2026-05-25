@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { ChevronRight } from "lucide-react"
 
 export default function MysterySlider() {
@@ -24,13 +24,6 @@ export default function MysterySlider() {
       image: "/11.jpg",
     },
   ]
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 8000)
-    return () => clearInterval(timer)
-  }, [slides.length])
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length)
@@ -98,27 +91,16 @@ export default function MysterySlider() {
                   </div>
                 </div>
 
-                {/* Right Image - Hidden on small mobile, visible on larger screens */}
-                <div className="relative hidden md:block">
+                {/* Right Image - always visible */}
+                <div className="relative">
                   <div className="relative group">
-                    {/* Main Image Container */}
-                    <div className="relative overflow-hidden rounded-2xl lg:rounded-3xl shadow-2xl">
+                    {/* Main Image Container - object-contain so the full image with text is visible */}
+                    <div className="relative overflow-hidden rounded-2xl lg:rounded-3xl shadow-2xl bg-black/30">
                       <img
                         src={slide.image}
                         alt={slide.logo}
-                        className="w-full aspect-[4/3] lg:aspect-[4/5] object-cover transform transition-transform duration-700 group-hover:scale-105"
+                        className="w-full h-auto max-h-[420px] object-contain transform transition-transform duration-700 group-hover:scale-105"
                       />
-
-                      {/* Gradient Overlays */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-                      <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                      {/* Logo Overlay on Image */}
-                      <div className="absolute bottom-6 right-6 lg:bottom-8 lg:right-8 bg-black/80 backdrop-blur-md px-4 py-3 lg:px-6 lg:py-4 rounded-xl border border-white/10">
-                        <h3 className="text-lg lg:text-2xl font-bold text-white whitespace-pre-line leading-tight">
-                          {slide.logo}
-                        </h3>
-                      </div>
                     </div>
 
                     {/* Decorative Elements */}
