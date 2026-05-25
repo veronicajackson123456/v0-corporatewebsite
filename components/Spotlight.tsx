@@ -89,21 +89,21 @@ export default function SpotlightProject() {
           </div>
 
           {/* Right - Image */}
-          <div className="relative group">
-            <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+          <div className="relative">
+            <div className="relative overflow-hidden rounded-2xl shadow-2xl bg-black">
+              {/* Full image, no height cap, object-contain so nothing is cropped */}
               <img
                 src="/12.jpg"
                 alt="A Beautiful Kill"
-                className="w-full h-[600px] object-cover transform transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-auto object-contain"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+            </div>
 
-              {/* Overlay Text */}
-              <div className="absolute bottom-8 left-8 right-8">
-                <p className="text-white/90 text-lg md:text-xl font-medium leading-relaxed italic">
-                  "Immerse yourself in the intrigue of A Beautiful Kill, where luxury meets deception."
-                </p>
-              </div>
+            {/* Quote below the image so it is always readable */}
+            <div className="mt-4 px-2">
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed italic text-center">
+                "Immerse yourself in the intrigue of A Beautiful Kill, where luxury meets deception."
+              </p>
             </div>
 
             {/* Decorative Elements */}

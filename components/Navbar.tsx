@@ -9,7 +9,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 20)
+      setScrolled(window.scrollY > 50)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -21,17 +21,23 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 transform ${
-        scrolled ? "-translate-y-full opacity-0" : "translate-y-0 opacity-100 bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? "bg-white/95 backdrop-blur-md shadow-lg" 
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 md:px-8">
-        <div className="flex items-center justify-between h-16 md:h-18">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo - Left Side */}
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center space-x-2 group">
-              <div className="bg-white px-4 py-1.5 rounded-md shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
-                <h1 className="text-xl md:text-2xl font-bold text-orange-600 tracking-tight">CNBC</h1>
+              <div className={`px-4 py-1.5 rounded-lg shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 ${
+                scrolled ? "bg-orange-600" : "bg-white"
+              }`}>
+                <h1 className={`text-xl md:text-2xl font-bold tracking-tight ${
+                  scrolled ? "text-white" : "text-orange-600"
+                }`}>CNBC</h1>
               </div>
             </a>
           </div>
@@ -40,34 +46,51 @@ export default function Navbar() {
           <div className="hidden lg:flex items-center justify-center space-x-6 xl:space-x-8 absolute left-1/2 transform -translate-x-1/2">
             <a
               href="/home"
-              className="relative text-white text-sm font-semibold tracking-wide hover:text-orange-100 transition-colors duration-300 uppercase group"
+              className={`relative text-sm font-semibold tracking-wide transition-colors duration-300 uppercase group ${
+                scrolled ? "text-gray-800 hover:text-orange-600" : "text-white hover:text-orange-100"
+              }`}
             >
               HOME
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
+              <span className={`absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
+                scrolled ? "bg-orange-600" : "bg-white"
+              }`}></span>
             </a>
             <a
               href="/portfolio"
-              className="relative text-white text-sm font-semibold tracking-wide hover:text-orange-100 transition-colors duration-300 uppercase group"
+              className={`relative text-sm font-semibold tracking-wide transition-colors duration-300 uppercase group ${
+                scrolled ? "text-gray-800 hover:text-orange-600" : "text-white hover:text-orange-100"
+              }`}
             >
               Film Production
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
+              <span className={`absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
+                scrolled ? "bg-orange-600" : "bg-white"
+              }`}></span>
             </a>
             <a
               href="/sponsors"
-              className="relative text-white text-sm font-semibold tracking-wide hover:text-orange-100 transition-colors duration-300 uppercase group"
+              className={`relative text-sm font-semibold tracking-wide transition-colors duration-300 uppercase group ${
+                scrolled ? "text-gray-800 hover:text-orange-600" : "text-white hover:text-orange-100"
+              }`}
             >
               Sponsors
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
+              <span className={`absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
+                scrolled ? "bg-orange-600" : "bg-white"
+              }`}></span>
             </a>
             <a
               href="/contact"
-              className="relative text-white text-sm font-semibold tracking-wide hover:text-orange-100 transition-colors duration-300 uppercase group"
+              className={`relative text-sm font-semibold tracking-wide transition-colors duration-300 uppercase group ${
+                scrolled ? "text-gray-800 hover:text-orange-600" : "text-white hover:text-orange-100"
+              }`}
             >
               Contact
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
+              <span className={`absolute bottom-0 left-0 w-0 h-0.5 group-hover:w-full transition-all duration-300 ${
+                scrolled ? "bg-orange-600" : "bg-white"
+              }`}></span>
             </a>
           </div>
 
+          {/* ION Link - Right Side */}
           <div className="hidden lg:flex flex-shrink-0">
             <a
               href="https://ionplustv.com/"
@@ -75,8 +98,12 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="flex items-center space-x-2 group"
             >
-              <div className="bg-white px-4 py-1.5 rounded-md shadow-md group-hover:shadow-lg transition-all duration-300 group-hover:scale-105">
-                <h1 className="text-xl md:text-2xl font-bold text-blue-600 tracking-tight">ION</h1>
+              <div className={`px-4 py-1.5 rounded-lg shadow-md transition-all duration-300 group-hover:shadow-lg group-hover:scale-105 ${
+                scrolled ? "bg-blue-600" : "bg-white"
+              }`}>
+                <h1 className={`text-xl md:text-2xl font-bold tracking-tight ${
+                  scrolled ? "text-white" : "text-blue-600"
+                }`}>ION</h1>
               </div>
             </a>
           </div>
@@ -84,7 +111,11 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden text-white p-2 hover:bg-white/10 rounded-md transition-colors duration-300"
+            className={`lg:hidden p-2 rounded-lg transition-colors duration-300 ${
+              scrolled 
+                ? "text-gray-800 hover:bg-gray-100" 
+                : "text-white hover:bg-white/10"
+            }`}
             aria-label="Toggle menu"
           >
             {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -97,31 +128,49 @@ export default function Navbar() {
             isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="py-4 space-y-2 border-t border-white/20">
+          <div className={`py-4 space-y-2 border-t ${
+            scrolled ? "border-gray-200 bg-white" : "border-white/20"
+          }`}>
             <a
               href="/home"
-              className="block text-white text-sm font-semibold tracking-wide hover:text-orange-100 hover:bg-white/10 px-4 py-2.5 rounded-md transition-all duration-300 uppercase"
+              className={`block text-sm font-semibold tracking-wide px-4 py-3 rounded-lg transition-all duration-300 uppercase ${
+                scrolled 
+                  ? "text-gray-800 hover:bg-orange-50 hover:text-orange-600" 
+                  : "text-white hover:bg-white/10"
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               HOME
             </a>
             <a
               href="/portfolio"
-              className="block text-white text-sm font-semibold tracking-wide hover:text-orange-100 hover:bg-white/10 px-4 py-2.5 rounded-md transition-all duration-300 uppercase"
+              className={`block text-sm font-semibold tracking-wide px-4 py-3 rounded-lg transition-all duration-300 uppercase ${
+                scrolled 
+                  ? "text-gray-800 hover:bg-orange-50 hover:text-orange-600" 
+                  : "text-white hover:bg-white/10"
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Film Production
             </a>
             <a
               href="/sponsors"
-              className="block text-white text-sm font-semibold tracking-wide hover:text-orange-100 hover:bg-white/10 px-4 py-2.5 rounded-md transition-all duration-300 uppercase"
+              className={`block text-sm font-semibold tracking-wide px-4 py-3 rounded-lg transition-all duration-300 uppercase ${
+                scrolled 
+                  ? "text-gray-800 hover:bg-orange-50 hover:text-orange-600" 
+                  : "text-white hover:bg-white/10"
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Sponsors
             </a>
             <a
               href="/contact"
-              className="block text-white text-sm font-semibold tracking-wide hover:text-orange-100 hover:bg-white/10 px-4 py-2.5 rounded-md transition-all duration-300 uppercase"
+              className={`block text-sm font-semibold tracking-wide px-4 py-3 rounded-lg transition-all duration-300 uppercase ${
+                scrolled 
+                  ? "text-gray-800 hover:bg-orange-50 hover:text-orange-600" 
+                  : "text-white hover:bg-white/10"
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               Contact
@@ -130,7 +179,11 @@ export default function Navbar() {
               href="https://ionplustv.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-white text-sm font-semibold tracking-wide hover:text-blue-200 hover:bg-white/10 px-4 py-2.5 rounded-md transition-all duration-300 uppercase"
+              className={`block text-sm font-semibold tracking-wide px-4 py-3 rounded-lg transition-all duration-300 uppercase ${
+                scrolled 
+                  ? "text-blue-600 hover:bg-blue-50" 
+                  : "text-white hover:bg-white/10"
+              }`}
               onClick={() => setIsMenuOpen(false)}
             >
               ION Plus

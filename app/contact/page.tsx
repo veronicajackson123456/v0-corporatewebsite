@@ -1,6 +1,7 @@
 "use client"
 
 import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 import type React from "react"
 import { useState } from "react"
 import { Mail, MapPin, Phone, Send, Building, Globe, MessageSquare } from "lucide-react"
@@ -290,6 +291,9 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
 
       <style jsx>{`
         @keyframes fadeInUp {

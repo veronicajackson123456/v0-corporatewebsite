@@ -1,6 +1,7 @@
 "use client"
 
 import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 import { useState } from "react"
 import { Play, Film, Award } from "lucide-react"
 import SpotlightProject from "@/components/Spotlight"
@@ -272,15 +273,12 @@ export default function FilmPortfolioPage() {
               solutions.
             </p>
 
-            <div className="flex flex-wrap gap-6 text-white">
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-semibold uppercase tracking-wider">
-                  For Sponsorship, Investment or Advertising opportunities&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; please contact info@hmcfo.cc (www.hmcfo.cc)
-                </span>
-              </div>
+            <div className="flex flex-wrap gap-2 text-white">
+              <p className="text-sm md:text-base font-semibold">
+                For Sponsorship, Investment or Advertising opportunities, please contact{" "}
+                <a href="mailto:info@hmcfo.cc" className="underline hover:text-orange-200 transition-colors">info@hmcfo.cc</a>
+                {" "}(<a href="https://www.hmcfo.cc" target="_blank" rel="noopener noreferrer" className="underline hover:text-orange-200 transition-colors">www.hmcfo.cc</a>)
+              </p>
             </div>
           </div>
         </div>
@@ -403,35 +401,25 @@ export default function FilmPortfolioPage() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-gradient-to-br from-orange-600 via-orange-500 to-orange-600 py-16 md:py-20">
+      {/* Contact Section */}
+      <section className="bg-gradient-to-br from-orange-600 via-orange-500 to-orange-600 py-12 md:py-16">
         <div className="container mx-auto px-4 md:px-8">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center mb-12">
-            <div></div>
-            <div>
-              
-            </div>
-            
-          </div>
-
-          <div className="mt-16 pt-8 border-t border-white/20">
-            <div className="max-w-3xl mx-auto text-center">
-              <p className="text-white/90 text-base md:text-lg leading-relaxed font-light">
-                For advertising, sponsorship or investment opportunities
-              </p>
-              <p className="text-white text-base md:text-lg leading-relaxed font-light mt-2">
-                please contact our official agents
-              </p>
-              <p className="text-white font-semibold text-lg md:text-xl mt-4">HMCFO Ltd</p>
-              <a
-                href="https://www.hmcfo.cc"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-3 text-white hover:text-orange-200 transition-colors text-base md:text-lg underline decoration-2 underline-offset-4"
-              >
-                www.hmcfo.cc
-              </a>
-            </div>
+          <div className="max-w-2xl mx-auto text-center space-y-3">
+            <p className="text-white/90 text-base md:text-lg leading-relaxed">
+              For advertising, sponsorship or investment opportunities
+            </p>
+            <p className="text-white text-base md:text-lg leading-relaxed">
+              please contact our official agents
+            </p>
+            <p className="text-white font-bold text-xl md:text-2xl mt-2">HMCFO Ltd</p>
+            <a
+              href="https://www.hmcfo.cc"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block text-white hover:text-orange-200 transition-colors text-base md:text-lg underline decoration-2 underline-offset-4"
+            >
+              www.hmcfo.cc
+            </a>
           </div>
         </div>
       </section>
@@ -459,6 +447,9 @@ export default function FilmPortfolioPage() {
           </div>
         </div>
       )}
+
+      {/* Footer */}
+      <Footer />
 
       <style jsx>{`
         @keyframes fadeInUp {
