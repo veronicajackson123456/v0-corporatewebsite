@@ -96,14 +96,14 @@ export default function CancellationRefundPage() {
       icon: <DollarSign className="w-8 h-8" />,
       title: "Full Refund",
       description: "If we fail to deliver services",
-      color: "bg-primary/20 text-secondary",
+      color: "bg-orange-100 text-orange-600",
     },
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/20 via-background to-background py-16 md:py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-orange-600 py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div
             className="absolute inset-0"
@@ -117,28 +117,28 @@ export default function CancellationRefundPage() {
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-6">
-              <RefreshCw className="w-8 h-8 md:w-10 md:h-10 text-foreground" />
-              <span className="text-foreground/90 text-sm md:text-base font-semibold uppercase tracking-widest">Policy</span>
+              <RefreshCw className="w-8 h-8 md:w-10 md:h-10 text-white" />
+              <span className="text-white/90 text-sm md:text-base font-semibold uppercase tracking-widest">Policy</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
               Cancellation & Refund Policy
             </h1>
 
-            <p className="text-lg md:text-xl text-foreground/90 leading-relaxed">CNBC UK</p>
+            <p className="text-lg md:text-xl text-white/90 leading-relaxed">CNBC UK</p>
           </div>
         </div>
       </section>
 
       {/* Quick Facts */}
-      <section className="py-12 md:py-16 glass border-b border-secondary/20">
+      <section className="py-12 md:py-16 bg-white border-b border-gray-200">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {quickFacts.map((fact, index) => (
                 <div
                   key={index}
-                  className="bg-background rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
+                  className="bg-gray-50 rounded-xl p-6 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1"
                   style={{
                     animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
                   }}
@@ -146,7 +146,7 @@ export default function CancellationRefundPage() {
                   <div className={`${fact.color} w-16 h-16 rounded-lg flex items-center justify-center mb-4`}>
                     {fact.icon}
                   </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">{fact.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{fact.title}</h3>
                   <p className="text-gray-600 text-sm">{fact.description}</p>
                 </div>
               ))}
@@ -156,11 +156,11 @@ export default function CancellationRefundPage() {
       </section>
 
       {/* Introduction */}
-      <section className="py-12 md:py-16 glass border-b border-secondary/20">
+      <section className="py-12 md:py-16 bg-white border-b border-gray-200">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="glass border border-secondary/20 border border-secondary/20 p-6 rounded-r-lg">
-              <p className="text-foreground leading-relaxed">
+            <div className="bg-orange-50 border-l-4 border-orange-600 p-6 rounded-r-lg">
+              <p className="text-gray-800 leading-relaxed">
                 At CNBC UK, we are committed to delivering high-quality services and ensuring customer satisfaction.
                 Please read our Cancellation & Refund Policy carefully before making a purchase.
               </p>
@@ -176,7 +176,7 @@ export default function CancellationRefundPage() {
             {sections.map((section, index) => (
               <div
                 key={index}
-                className="glass rounded-2xl hover:border-secondary/40 transition-shadow duration-300 overflow-hidden"
+                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
                 style={{
                   animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
                 }}
@@ -197,7 +197,7 @@ export default function CancellationRefundPage() {
                     >
                       {section.icon}
                     </div>
-                    <h2 className="text-xl md:text-2xl font-bold text-foreground leading-tight pt-2">{section.title}</h2>
+                    <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight pt-2">{section.title}</h2>
                   </div>
 
                   {/* Section Content */}
@@ -205,16 +205,16 @@ export default function CancellationRefundPage() {
                     {section.content.map((item, itemIndex) => (
                       <div key={itemIndex}>
                         {"subtitle" in item && item.subtitle && (
-                          <h3 className="text-lg font-bold text-foreground mb-2">{item.subtitle}</h3>
+                          <h3 className="text-lg font-bold text-gray-800 mb-2">{item.subtitle}</h3>
                         )}
 
-                        {item.text && <p className="text-muted-foreground leading-relaxed mb-3">{item.text}</p>}
+                        {item.text && <p className="text-gray-700 leading-relaxed mb-3">{item.text}</p>}
 
                         {"list" in item && item.list && (
                           <ul className="space-y-2 ml-4">
                             {item.list.map((listItem: string, listIndex: number) => (
-                              <li key={listIndex} className="flex items-start gap-3 text-muted-foreground">
-                                <CheckCircle className="w-5 h-5 text-secondary flex-shrink-0 mt-0.5" />
+                              <li key={listIndex} className="flex items-start gap-3 text-gray-700">
+                                <CheckCircle className="w-5 h-5 text-orange-600 flex-shrink-0 mt-0.5" />
                                 <span>{listItem}</span>
                               </li>
                             ))}
@@ -234,19 +234,19 @@ export default function CancellationRefundPage() {
       <section className="py-12 md:py-16 bg-gray-100">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="glass rounded-2xl shadow-lg p-8 md:p-10 border-t-4 border-orange-600">
+            <div className="bg-white rounded-2xl shadow-lg p-8 md:p-10 border-t-4 border-orange-600">
               <div className="flex items-start gap-4">
-                <AlertTriangle className="w-8 h-8 text-secondary flex-shrink-0" />
+                <AlertTriangle className="w-8 h-8 text-orange-600 flex-shrink-0" />
                 <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4">Important Notice</h3>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">Important Notice</h3>
+                  <p className="text-gray-700 leading-relaxed mb-4">
                     This policy is designed to ensure transparency and fairness in all our business transactions. We
                     recommend that all clients review this policy before engaging with our services.
                   </p>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-gray-700 leading-relaxed">
                     For any questions or concerns regarding cancellations or refunds, please contact our customer
                     support team at{" "}
-                    <a href="mailto:cnbc.jp@gmail.com" className="text-secondary font-semibold hover:underline">
+                    <a href="mailto:cnbc.jp@gmail.com" className="text-orange-600 font-semibold hover:underline">
                       cnbc.jp@gmail.com
                     </a>
                   </p>
@@ -258,16 +258,16 @@ export default function CancellationRefundPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-primary/20 via-background to-background">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-orange-600 via-orange-500 to-orange-600">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Need Help with a Refund?</h2>
-            <p className="text-lg text-foreground/90 mb-8 leading-relaxed">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Need Help with a Refund?</h2>
+            <p className="text-lg text-white/90 mb-8 leading-relaxed">
               Our customer support team is here to assist you with any cancellation or refund requests.
             </p>
             <a
               href="#contact"
-              className="inline-block glass text-secondary px-8 py-4 rounded-lg font-bold text-base hover:bg-secondary/10 transition-all duration-300 cinematic-glow transform hover:scale-105 uppercase tracking-wide"
+              className="inline-block bg-white text-orange-600 px-8 py-4 rounded-lg font-bold text-base hover:bg-orange-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 uppercase tracking-wide"
             >
               Contact Support
             </a>

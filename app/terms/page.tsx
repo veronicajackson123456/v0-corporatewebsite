@@ -133,27 +133,33 @@ export default function TermsConditionsPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary/30 via-background to-background py-16 md:py-24 overflow-hidden border-b border-secondary/20">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 -left-96 w-96 h-96 bg-red-900/10 rounded-full blur-3xl"></div>
+      <section className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-orange-600 py-16 md:py-24 overflow-hidden">
+        <div className="absolute inset-0 opacity-10">
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+              backgroundSize: "40px 40px",
+            }}
+          ></div>
         </div>
 
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-6">
-              <FileText className="w-8 h-8 md:w-10 md:h-10 text-secondary" />
-              <span className="text-secondary text-sm md:text-base font-semibold uppercase tracking-widest">Legal</span>
+              <FileText className="w-8 h-8 md:w-10 md:h-10 text-white" />
+              <span className="text-white/90 text-sm md:text-base font-semibold uppercase tracking-widest">Legal</span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight cinematic-text">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
               Terms & Conditions
             </h1>
 
-            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">CNBC LLC</p>
+            <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-6">CNBC LLC</p>
 
-            <div className="flex items-center gap-4 text-muted-foreground text-sm">
+            <div className="flex items-center gap-4 text-white/80 text-sm">
               <span className="font-semibold">Version 1.0</span>
               <span>|</span>
               
@@ -163,13 +169,13 @@ export default function TermsConditionsPage() {
       </section>
 
       {/* Introduction */}
-      <section className="py-12 md:py-16 bg-background border-b border-secondary/20">
+      <section className="py-12 md:py-16 bg-white border-b border-gray-200">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="glass border border-secondary/20 p-6 rounded-lg">
-              <p className="text-muted-foreground leading-relaxed">
+            <div className="bg-orange-50 border-l-4 border-orange-600 p-6 rounded-r-lg">
+              <p className="text-gray-800 leading-relaxed">
                 Welcome to CNBC LLC. By accessing or using our website{" "}
-                <a href="https://www.cnbc.uk.com" className="text-secondary font-semibold hover:text-primary transition-colors">
+                <a href="https://www.cnbc.uk.com" className="text-orange-600 font-semibold hover:underline">
                   www.corporatenetworkbroadcastingcinema.com
                 </a>{" "}
                 (the "Site"), you agree to comply with these Terms & Conditions ("Terms"). If you do not agree with any
@@ -187,7 +193,7 @@ export default function TermsConditionsPage() {
             {sections.map((section, index) => (
               <div
                 key={index}
-                className="glass border border-secondary/20 rounded-lg hover:border-secondary/40 transition-all duration-300 overflow-hidden"
+                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
                 style={{
                   animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
                 }}
@@ -195,8 +201,8 @@ export default function TermsConditionsPage() {
                 <div className="p-6 md:p-8">
                   {/* Section Header */}
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="flex-shrink-0 bg-primary/20 text-secondary p-3 rounded-lg">{section.icon}</div>
-                    <h2 className="text-xl md:text-2xl font-bold text-foreground leading-tight pt-2">{section.title}</h2>
+                    <div className="flex-shrink-0 bg-orange-100 text-orange-600 p-3 rounded-lg">{section.icon}</div>
+                    <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight pt-2">{section.title}</h2>
                   </div>
 
                   {/* Section Content */}
@@ -204,16 +210,16 @@ export default function TermsConditionsPage() {
                     {section.content.map((item, itemIndex) => (
                       <div key={itemIndex}>
                         {"subtitle" in item && item.subtitle && (
-                          <h3 className="text-lg font-bold text-foreground mb-2">{item.subtitle}</h3>
+                          <h3 className="text-lg font-bold text-gray-800 mb-2">{item.subtitle}</h3>
                         )}
 
-                        {item.text && <p className="text-muted-foreground leading-relaxed mb-3">{item.text}</p>}
+                        {item.text && <p className="text-gray-700 leading-relaxed mb-3">{item.text}</p>}
 
                         {"list" in item && item.list && (
                           <ul className="space-y-2 ml-4">
                             {item.list.map((listItem: string, listIndex: number) => (
-                              <li key={listIndex} className="flex items-start gap-3 text-muted-foreground">
-                                <span className="text-primary font-bold mt-1">•</span>
+                              <li key={listIndex} className="flex items-start gap-3 text-gray-700">
+                                <span className="text-orange-600 font-bold mt-1">•</span>
                                 <span>{listItem}</span>
                               </li>
                             ))}
@@ -230,16 +236,16 @@ export default function TermsConditionsPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-primary/20 via-background to-background border-t border-secondary/20">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-orange-600 via-orange-500 to-orange-600">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6 cinematic-text">Questions About Our Terms?</h2>
-            <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Questions About Our Terms?</h2>
+            <p className="text-lg text-white/90 mb-8 leading-relaxed">
               If you have any questions or concerns about these Terms & Conditions, please don't hesitate to contact us.
             </p>
             <a
-              href="/contact"
-              className="inline-block bg-primary hover:bg-red-700 text-foreground px-8 py-4 rounded-lg font-bold text-base transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 uppercase tracking-wide cinematic-glow"
+              href="#contact"
+              className="inline-block bg-white text-orange-600 px-8 py-4 rounded-lg font-bold text-base hover:bg-orange-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 uppercase tracking-wide"
             >
               Contact Us
             </a>

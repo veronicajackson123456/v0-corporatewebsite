@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import { motion } from "framer-motion"
 
 export default function HeroWithNavbar() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -11,24 +10,48 @@ export default function HeroWithNavbar() {
   const slides = [
     {
       id: 1,
-      type: "single",
-      title: "A Beautiful Night for A Beautiful Kill",
-      subtitle: "Cinematic Elegance Meets Storytelling Excellence",
-      image: "aa.jpg",
+      type: "multiple",
+      shows: [
+        {
+          title: "Film Production and Broadcasting",
+          subtitle: "CNBC - Innovating Entertainment",
+          image: "aa.jpg",
+        },
+        {
+          title: "Global Reach",
+          subtitle:
+            "Leveraging our extensive network of international partners, CNBC bridges creativity and opportunity",
+          image: "hh.jpg",
+        },
+        {
+          title: "Empowering Creative Visions",
+          subtitle: "At CNBC, we bring bold ideas to life",
+          image: "hh1.jpg",
+        },
+      ],
     },
     {
       id: 2,
       type: "single",
-      title: "Marbella Takes Center Stage",
-      subtitle: "The team that is taking over Marbella this Summer with entertainment excellence",
-      image: "hh.jpg",
+      title: "Film Production and Broadcasting",
+      subtitle:
+        "With expertise across film, television, live events, and music, CNBC is redefining the creative landscape. Our tailored solutions ensure every project reaches its full potential.",
+      image: "h2.png",
+    },
+    {
+      id: 3,
+      type: "single",
+      title: "Empowering Creative Visions",
+      subtitle:
+        "At CNBC, we bring bold ideas to life. From studio films to independent projects, we partner with global talent to create stories that inspire and captivate audiences worldwide.",
+      image: "h1.jpg",
     },
   ]
 
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 8000)
+    }, 8000) // Slower transition - 8 seconds
     return () => clearInterval(timer)
   }, [])
 
@@ -47,113 +70,151 @@ export default function HeroWithNavbar() {
   const currentSlideData = slides[currentSlide]
 
   return (
-    <div className="relative w-full h-screen bg-background overflow-hidden pt-20">
-      {/* Ambient glow */}
-      <div className="absolute inset-0">
-        <div className="absolute top-1/3 -left-96 w-96 h-96 bg-red-900/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/3 -right-96 w-96 h-96 bg-red-900/20 rounded-full blur-3xl"></div>
+    <div className="relative w-full h-screen bg-gradient-to-br from-orange-500 via-orange-600 to-orange-700 overflow-hidden">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: "radial-gradient(circle at 2px 2px, white 1px, transparent 0)",
+            backgroundSize: "40px 40px",
+          }}
+        ></div>
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 h-full flex items-center">
-        <motion.div
-          key={currentSlide}
-          className="absolute inset-0 w-full h-full flex items-center"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 1 }}
-        >
-          {/* Background image with overlay */}
-          <div className="absolute inset-0">
-            <img src={currentSlideData.image} alt={currentSlideData.title} className="w-full h-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent"></div>
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-          </div>
-
-          {/* Content */}
-          <div className="container mx-auto px-6 md:px-12 lg:px-16 relative z-20">
-            <div className="max-w-3xl">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2 }}
-                className="space-y-2 mb-6"
-              >
-                <p className="text-secondary text-sm md:text-base tracking-[0.2em] uppercase font-bold">
-                  Featured Production
-                </p>
-              </motion.div>
-
-              <motion.h2
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="text-6xl md:text-7xl lg:text-8xl cinematic-text leading-tight mb-6 text-balance"
-              >
-                {currentSlideData.title}
-              </motion.h2>
-
-              <motion.p
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4 }}
-                className="text-xl md:text-2xl text-muted-foreground font-light leading-relaxed mb-10 max-w-2xl"
-              >
-                {currentSlideData.subtitle}
-              </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 }}
-                className="flex flex-col sm:flex-row gap-4"
-              >
-                <button onClick={() => alert('Video player opening...')} className="px-8 py-4 bg-primary hover:bg-red-700 text-foreground font-bold text-sm tracking-widest uppercase transition-all duration-300 rounded-lg cinematic-glow">
-                  Watch Now
-                </button>
-                <button onClick={() => window.location.href = '/portfolio'} className="px-8 py-4 border-2 border-secondary text-secondary hover:bg-secondary/10 font-bold text-sm tracking-widest uppercase transition-all duration-300 rounded-lg">
-                  Learn More
-                </button>
-              </motion.div>
+      <div className="relative z-10 h-full flex items-center pt-16 md:pt-20">
+        {currentSlideData.type === "multiple" ? (
+          /* Slide 1: Three Pictures */
+          <div className="w-full h-full flex items-center">
+            <div className="w-full h-full px-4 md:px-8 flex items-center">
+              <div className="flex gap-3 md:gap-4 lg:gap-6 w-full max-w-6xl mx-auto justify-center items-center">
+                {(currentSlideData.shows ?? []).map((show, index) => (
+                  <div
+                    key={index}
+                    className="group relative bg-white/5 backdrop-blur-md rounded-2xl md:rounded-3xl overflow-hidden transform transition-all duration-700 hover:scale-105 hover:shadow-2xl"
+                    style={{
+                      animation: `fadeIn 1s ease-out ${index * 0.2}s both`,
+                      width: index === 0 ? "35%" : index === 1 ? "30%" : "25%",
+                      maxWidth: index === 0 ? "320px" : index === 1 ? "280px" : "240px",
+                    }}
+                  >
+                    <div className="aspect-[2/3] overflow-hidden">
+                      <img
+                        src={show.image}
+                        alt={show.title}
+                        className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-3 md:p-4 lg:p-6 text-center">
+                      <h3 className="text-sm md:text-lg lg:text-xl font-bold text-white mb-1 tracking-wide">
+                        {show.title}
+                      </h3>
+                      <p className="text-orange-300 text-xs md:text-sm font-semibold tracking-widest">
+                        {show.subtitle}
+                      </p>
+                    </div>
+                    <div className="absolute top-3 left-3 w-8 h-8 md:w-12 md:h-12 border-t-4 border-l-4 border-white/30 rounded-tl-2xl"></div>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </motion.div>
+        ) : (
+          /* Slides 2 & 3: Full Image */
+          <div
+            className="absolute inset-0"
+            style={{
+              animation: "fadeIn 1s ease-out both",
+            }}
+          >
+            <img src={currentSlideData.image} alt={currentSlideData.title} className="w-full h-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
+
+            {/* Content Overlay */}
+            <div className="absolute inset-0 flex items-center">
+              <div className="container mx-auto px-6 md:px-12 lg:px-16">
+                <div className="max-w-2xl">
+                  <h2
+                    className="text-5xl md:text-6xl lg:text-7xl font-black text-white mb-4 tracking-tight leading-tight"
+                    style={{
+                      animation: "slideInLeft 0.8s ease-out 0.2s both",
+                    }}
+                  >
+                    {currentSlideData.title}
+                  </h2>
+                  <p
+                    className="text-xl md:text-2xl lg:text-3xl text-orange-300 font-bold tracking-wide"
+                    style={{
+                      animation: "slideInLeft 0.8s ease-out 0.4s both",
+                    }}
+                  >
+                    {currentSlideData.subtitle}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-2 md:left-4 lg:left-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-md p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 group z-20"
+          aria-label="Previous slide"
+        >
+          <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 text-white group-hover:scale-110 transition-transform" />
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="absolute right-2 md:right-4 lg:right-8 top-1/2 -translate-y-1/2 bg-white/10 hover:bg-white/20 backdrop-blur-md p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 group z-20"
+          aria-label="Next slide"
+        >
+          <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-white group-hover:scale-110 transition-transform" />
+        </button>
       </div>
 
-      {/* Navigation Arrows */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 glass hover:bg-white/20 p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-30 group"
-        aria-label="Previous slide"
-      >
-        <ChevronLeft className="w-6 h-6 md:w-8 md:h-8 text-foreground group-hover:scale-110 transition-transform" />
-      </button>
-
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 glass hover:bg-white/20 p-3 md:p-4 rounded-full transition-all duration-300 hover:scale-110 z-30 group"
-        aria-label="Next slide"
-      >
-        <ChevronRight className="w-6 h-6 md:w-8 md:h-8 text-foreground group-hover:scale-110 transition-transform" />
-      </button>
-
       {/* Pagination Dots */}
-      <div className="absolute bottom-8 md:bottom-12 left-1/2 -translate-x-1/2 flex items-center gap-3 z-30">
+      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-2 md:gap-3 z-20">
         {slides.map((_, index) => (
-          <motion.button
+          <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`transition-all duration-300 rounded-full ${
+            className={`transition-all duration-500 rounded-full ${
               index === currentSlide
-                ? "w-10 md:w-12 h-2.5 md:h-3 bg-primary"
-                : "w-2.5 md:w-3 h-2.5 md:h-3 bg-secondary/40 hover:bg-secondary/70"
+                ? "w-10 md:w-12 h-2.5 md:h-3 bg-white"
+                : "w-2.5 md:w-3 h-2.5 md:h-3 bg-white/40 hover:bg-white/60"
             }`}
-            whileHover={{ scale: 1.1 }}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
       </div>
+
+      <style jsx>{`
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        
+        @keyframes slideInLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-50px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+      `}</style>
     </div>
   )
 }
