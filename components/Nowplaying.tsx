@@ -47,7 +47,7 @@ export default function NowPlayingSection() {
             </div>
 
             <div className="pt-4">
-              <button className="px-8 py-4 bg-primary hover:bg-red-700 text-foreground font-bold text-sm tracking-widest uppercase transition-all duration-300 rounded-lg cinematic-glow inline-flex items-center gap-3">
+              <button onClick={() => alert('Video player opening...')} className="px-8 py-4 bg-primary hover:bg-red-700 text-foreground font-bold text-sm tracking-widest uppercase transition-all duration-300 rounded-lg cinematic-glow inline-flex items-center gap-3">
                 <Play className="w-5 h-5 fill-current" />
                 Watch Now
               </button>

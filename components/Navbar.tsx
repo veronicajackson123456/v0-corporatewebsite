@@ -31,8 +31,8 @@ export default function Navbar() {
           {/* Logo - Left Side */}
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center space-x-2 group">
-              <div className="glass px-4 py-2 group-hover:bg-white/20 transition-all duration-300">
-                <h1 className="text-xl md:text-2xl font-bold text-secondary tracking-widest">A BEAUTIFUL KILL</h1>
+              <div className="bg-white/10 backdrop-blur-md px-4 py-2 rounded-lg group-hover:bg-white/20 transition-all duration-300 border border-white/20">
+                <h1 className="text-xl md:text-2xl font-bold text-foreground tracking-widest">CNBC</h1>
               </div>
             </a>
           </div>
@@ -59,7 +59,7 @@ export default function Navbar() {
 
           {/* Right Side CTA */}
           <div className="hidden lg:flex flex-shrink-0">
-            <button className="px-6 py-2 bg-primary hover:bg-red-700 text-foreground font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-lg cinematic-glow">
+            <button onClick={() => window.location.href = '/contact'} className="px-6 py-2 bg-primary hover:bg-red-700 text-foreground font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-lg cinematic-glow">
               Inquire
             </button>
           </div>
@@ -97,7 +97,7 @@ export default function Navbar() {
                 {link.label}
               </a>
             ))}
-            <button className="w-full mx-4 px-4 py-3 bg-primary hover:bg-red-700 text-foreground font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-lg">
+            <button onClick={() => window.location.href = '/contact'} className="w-full mx-4 px-4 py-3 bg-primary hover:bg-red-700 text-foreground font-bold text-xs tracking-widest uppercase transition-all duration-300 rounded-lg">
               Inquire
             </button>
           </div>

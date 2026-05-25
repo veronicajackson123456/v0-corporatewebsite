@@ -46,7 +46,7 @@ export default function TopShowsSection() {
           <h3 className="text-sm md:text-base tracking-[0.2em] text-secondary uppercase font-bold">
             Featured Productions
           </h3>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl cinematic-text">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl cinematic-text text-foreground">
             Curated Collection
           </h2>
         </motion.div>

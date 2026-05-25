@@ -212,9 +212,9 @@ export default function AccessibilityStatementPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-orange-600 via-orange-500 to-orange-600 py-16 md:py-24 overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary/20 via-background to-background py-16 md:py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div
             className="absolute inset-0"
@@ -228,21 +228,21 @@ export default function AccessibilityStatementPage() {
         <div className="container mx-auto px-4 md:px-8 relative z-10">
           <div className="max-w-4xl">
             <div className="flex items-center gap-3 mb-6">
-              <Accessibility className="w-8 h-8 md:w-10 md:h-10 text-white" />
-              <span className="text-white/90 text-sm md:text-base font-semibold uppercase tracking-widest">
+              <Accessibility className="w-8 h-8 md:w-10 md:h-10 text-foreground" />
+              <span className="text-foreground/90 text-sm md:text-base font-semibold uppercase tracking-widest">
                 Accessibility
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-4 leading-tight">
               Accessibility Statement
             </h1>
 
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed mb-6">
+            <p className="text-lg md:text-xl text-foreground/90 leading-relaxed mb-6">
               Our commitment to inclusive web design and accessibility
             </p>
 
-            <div className="flex items-center gap-4 text-white/80 text-sm">
+            <div className="flex items-center gap-4 text-foreground/80 text-sm">
               <span className="font-semibold">Version 1.0</span>
               <span>|</span>
               <span>Last Modified: April 2026</span>
@@ -252,11 +252,11 @@ export default function AccessibilityStatementPage() {
       </section>
 
       {/* Introduction */}
-      <section className="py-12 md:py-16 bg-white border-b border-gray-200">
+      <section className="py-12 md:py-16 glass border-b border-secondary/20">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-4xl mx-auto">
-            <div className="bg-orange-50 border-l-4 border-orange-600 p-6 rounded-r-lg">
-              <p className="text-gray-800 leading-relaxed">
+            <div className="glass border border-secondary/20 border border-secondary/20 p-6 rounded-r-lg">
+              <p className="text-foreground leading-relaxed">
                 We believe the web should be accessible to everyone. This statement outlines our accessibility
                 features and our commitment to ongoing improvement.
               </p>
@@ -272,7 +272,7 @@ export default function AccessibilityStatementPage() {
             {sections.map((section, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl shadow-md hover:shadow-lg transition-shadow duration-300 overflow-hidden"
+                className="glass rounded-2xl hover:border-secondary/40 transition-shadow duration-300 overflow-hidden"
                 style={{
                   animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
                 }}
@@ -280,8 +280,8 @@ export default function AccessibilityStatementPage() {
                 <div className="p-6 md:p-8">
                   {/* Section Header */}
                   <div className="flex items-start gap-4 mb-6">
-                    <div className="flex-shrink-0 bg-orange-100 text-orange-600 p-3 rounded-lg">{section.icon}</div>
-                    <h2 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight pt-2">{section.title}</h2>
+                    <div className="flex-shrink-0 bg-primary/20 text-secondary p-3 rounded-lg">{section.icon}</div>
+                    <h2 className="text-xl md:text-2xl font-bold text-foreground leading-tight pt-2">{section.title}</h2>
                   </div>
 
                   {/* Section Content */}
@@ -289,16 +289,16 @@ export default function AccessibilityStatementPage() {
                     {section.content.map((item, itemIndex) => (
                       <div key={itemIndex}>
                         {"subtitle" in item && item.subtitle && (
-                          <h3 className="text-lg font-bold text-gray-800 mb-2">{item.subtitle}</h3>
+                          <h3 className="text-lg font-bold text-foreground mb-2">{item.subtitle}</h3>
                         )}
 
-                        {item.text && <p className="text-gray-700 leading-relaxed mb-3">{item.text}</p>}
+                        {item.text && <p className="text-muted-foreground leading-relaxed mb-3">{item.text}</p>}
 
                         {"list" in item && item.list && (
                           <ul className="space-y-2 ml-4">
                             {item.list.map((listItem: string, listIndex: number) => (
-                              <li key={listIndex} className="flex items-start gap-3 text-gray-700">
-                                <span className="text-orange-600 font-bold mt-1">•</span>
+                              <li key={listIndex} className="flex items-start gap-3 text-muted-foreground">
+                                <span className="text-secondary font-bold mt-1">•</span>
                                 <span>{listItem}</span>
                               </li>
                             ))}
@@ -315,16 +315,16 @@ export default function AccessibilityStatementPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-16 md:py-20 bg-gradient-to-br from-orange-600 via-orange-500 to-orange-600">
+      <section className="py-16 md:py-20 bg-gradient-to-br from-primary/20 via-background to-background">
         <div className="container mx-auto px-4 md:px-8">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Report Accessibility Issues</h2>
-            <p className="text-lg text-white/90 mb-8 leading-relaxed">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">Report Accessibility Issues</h2>
+            <p className="text-lg text-foreground/90 mb-8 leading-relaxed">
               Encountered an accessibility barrier? Let us know and we&apos;ll work quickly to resolve it.
             </p>
             <a
               href="/contact"
-              className="inline-block bg-white text-orange-600 px-8 py-4 rounded-lg font-bold text-base hover:bg-orange-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 uppercase tracking-wide"
+              className="inline-block glass text-secondary px-8 py-4 rounded-lg font-bold text-base hover:bg-secondary/10 transition-all duration-300 cinematic-glow transform hover:scale-105 uppercase tracking-wide"
             >
               Contact Us
             </a>

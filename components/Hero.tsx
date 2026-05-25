@@ -20,7 +20,7 @@ export default function HeroWithNavbar() {
       id: 2,
       type: "single",
       title: "Marbella Takes Center Stage",
-      subtitle: "The team that&apos;s revolutionizing entertainment this summer",
+      subtitle: "The team that is taking over Marbella this Summer with entertainment excellence",
       image: "hh.jpg",
     },
   ]
@@ -109,10 +109,10 @@ export default function HeroWithNavbar() {
                 transition={{ delay: 0.5 }}
                 className="flex flex-col sm:flex-row gap-4"
               >
-                <button className="px-8 py-4 bg-primary hover:bg-red-700 text-foreground font-bold text-sm tracking-widest uppercase transition-all duration-300 rounded-lg cinematic-glow">
+                <button onClick={() => alert('Video player opening...')} className="px-8 py-4 bg-primary hover:bg-red-700 text-foreground font-bold text-sm tracking-widest uppercase transition-all duration-300 rounded-lg cinematic-glow">
                   Watch Now
                 </button>
-                <button className="px-8 py-4 border-2 border-secondary text-secondary hover:bg-secondary/10 font-bold text-sm tracking-widest uppercase transition-all duration-300 rounded-lg">
+                <button onClick={() => window.location.href = '/portfolio'} className="px-8 py-4 border-2 border-secondary text-secondary hover:bg-secondary/10 font-bold text-sm tracking-widest uppercase transition-all duration-300 rounded-lg">
                   Learn More
                 </button>
               </motion.div>

@@ -90,6 +90,7 @@ export default function MysterySlider() {
 
                   {/* Button */}
                   <motion.button
+                    onClick={() => window.location.href = '/portfolio'}
                     className="group relative bg-primary hover:bg-red-700 text-foreground font-bold text-sm md:text-base px-8 py-4 transition-all duration-300 shadow-lg hover:shadow-xl uppercase tracking-widest rounded-lg cinematic-glow overflow-hidden"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

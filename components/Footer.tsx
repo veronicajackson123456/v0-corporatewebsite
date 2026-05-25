@@ -1,5 +1,5 @@
 "use client"
-import { Mail, MapPin, Instagram, Twitter, Linkedin } from "lucide-react"
+import { Mail, MapPin } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function Footer() {
@@ -39,13 +39,13 @@ export default function Footer() {
         >
           {/* Company Info */}
           <motion.div className="md:col-span-2" variants={itemVariants}>
-            <h3 className="text-3xl md:text-4xl cinematic-text mb-4">A Beautiful Kill</h3>
+            <h3 className="text-3xl md:text-4xl cinematic-text mb-4">CNBC LLC</h3>
             <p className="text-muted-foreground text-sm md:text-base mb-6 max-w-md leading-relaxed">
-              Crafting extraordinary cinematic experiences through premium production services and visionary storytelling on the global stage.
+              Corporate Network Broadcasting Cinema delivers premium broadcasting services and cinematic content distribution across global media platforms.
             </p>
             <div className="flex items-center gap-2 text-secondary text-xs uppercase tracking-wider font-semibold">
               <div className="w-8 h-0.5 bg-secondary"></div>
-              <span>Premium Cinema Solutions</span>
+              <span>Enterprise Media Solutions</span>
             </div>
           </motion.div>
 
@@ -55,12 +55,12 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-3 text-muted-foreground text-sm md:text-base hover:text-secondary transition-colors duration-300">
                 <Mail className="w-5 h-5 mt-0.5 text-secondary flex-shrink-0" />
-                <span>contact@abeautifulkill.film</span>
+                <span>cnbc.jp@gmail.com</span>
               </li>
 
               <li className="flex items-start gap-3 text-muted-foreground text-sm md:text-base hover:text-secondary transition-colors duration-300">
                 <MapPin className="w-5 h-5 mt-0.5 text-secondary flex-shrink-0" />
-                <span>Marbella, Spain</span>
+                <span>30 NORTH GOULD STREET, SHERIDAN WYOMING USA</span>
               </li>
             </ul>
           </motion.div>
@@ -89,6 +89,16 @@ export default function Footer() {
                   Accessibility
                 </a>
               </li>
+              <li>
+                <a href="/disclaimer" className="text-muted-foreground text-sm md:text-base hover:text-secondary transition-colors duration-300">
+                  Disclaimer
+                </a>
+              </li>
+              <li>
+                <a href="/cancellation-refund" className="text-muted-foreground text-sm md:text-base hover:text-secondary transition-colors duration-300">
+                  Refund Policy
+                </a>
+              </li>
             </ul>
           </motion.div>
         </motion.div>
@@ -98,59 +108,48 @@ export default function Footer() {
       <div className="border-t border-secondary/20"></div>
 
       {/* Bottom Section */}
-      <div className="container mx-auto px-4 md:px-8 py-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Copyright */}
-          <div className="text-center md:text-left">
-            <p className="text-muted-foreground text-sm">
-              Copyright © {currentYear} A Beautiful Kill. All rights reserved.
-            </p>
+      <div className="container mx-auto px-4 md:px-8 py-4">
+        <div className="flex flex-col items-center gap-2 text-center">
+          {/* Production / Sponsorship */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-2 text-xs md:text-sm text-muted-foreground">
+            <span className="uppercase tracking-wide">
+              PRODUCTION: <span className="font-semibold text-secondary">CNBC LLC, USA</span>
+            </span>
+            <span className="hidden md:inline text-muted-foreground/60">•</span>
+            <span className="uppercase tracking-wide">
+              ADVERTISING / SPONSORSHIP: <span className="font-semibold text-secondary">HMCFO LTD</span>
+            </span>
           </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-4">
-            <motion.a
-              href="#"
-              className="p-2 rounded-full glass hover:bg-white/20 transition-all duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5 text-secondary" />
-            </motion.a>
-            <motion.a
-              href="#"
-              className="p-2 rounded-full glass hover:bg-white/20 transition-all duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Twitter"
-            >
-              <Twitter className="w-5 h-5 text-secondary" />
-            </motion.a>
-            <motion.a
-              href="#"
-              className="p-2 rounded-full glass hover:bg-white/20 transition-all duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5 text-secondary" />
-            </motion.a>
-          </div>
-
-          {/* Additional Links */}
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
-            <a href="/terms" className="hover:text-secondary transition-colors duration-300">
-              Terms
-            </a>
-            <span className="text-secondary/40">•</span>
-            <a href="/privacy-policy" className="hover:text-secondary transition-colors duration-300">
-              Privacy
-            </a>
-            <span className="text-secondary/40">•</span>
-            <a href="/cookie-policy" className="hover:text-secondary transition-colors duration-300">
-              Cookies
-            </a>
+          {/* Copyright + Links */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-2 text-[11px] md:text-xs text-muted-foreground">
+            <span>Copyright © {currentYear} CNBC LLC</span>
+            <span className="hidden md:inline text-muted-foreground/60">•</span>
+            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+              <a href="/terms" className="hover:text-secondary transition-colors duration-300">
+                Terms of Service
+              </a>
+              <span className="hidden md:inline text-muted-foreground/60">|</span>
+              <a href="/privacy-policy" className="hover:text-secondary transition-colors duration-300">
+                Privacy Policy
+              </a>
+              <span className="hidden md:inline text-muted-foreground/60">|</span>
+              <a href="/cookie-policy" className="hover:text-secondary transition-colors duration-300">
+                Cookie Policy
+              </a>
+              <span className="hidden md:inline text-muted-foreground/60">|</span>
+              <a href="/accessibility-statement" className="hover:text-secondary transition-colors duration-300">
+                Accessibility
+              </a>
+              <span className="hidden md:inline text-muted-foreground/60">|</span>
+              <a href="/disclaimer" className="hover:text-secondary transition-colors duration-300">
+                Disclaimer
+              </a>
+              <span className="hidden md:inline text-muted-foreground/60">|</span>
+              <a href="/cancellation-refund" className="hover:text-secondary transition-colors duration-300">
+                Refund Policy
+              </a>
+            </div>
           </div>
         </div>
       </div>
