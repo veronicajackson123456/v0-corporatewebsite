@@ -1,70 +1,58 @@
 "use client"
 
-import { motion } from "framer-motion"
-
 export default function TopShowsSection() {
   const shows = [
     {
       id: 1,
-      title: "PREMIUM COLLECTION",
+      title: "POWER LUNCH",
+      subtitle: "Weekdays at 12PM",
       image: "/aa.jpg",
     },
     {
       id: 2,
-      title: "CINEMATIC VISION",
+      title: "CLOSING BELL",
+      subtitle: "Weekdays at 4PM",
       image: "/hh.jpg",
     },
     {
       id: 3,
-      title: "STORYTELLING ART",
+      title: "SQUAWK BOX",
+      subtitle: "Weekdays at 6AM",
       image: "/hh1.jpg",
     },
     {
       id: 4,
-      title: "VISUAL EXCELLENCE",
+      title: "MAD MONEY",
+      subtitle: "Weekdays at 6PM",
       image: "/h1.jpg",
     },
   ]
 
   return (
-    <section className="relative py-20 md:py-28 lg:py-32 bg-background overflow-hidden">
-      {/* Ambient effects */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-96 w-96 h-96 bg-red-900/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 -right-96 w-96 h-96 bg-red-900/5 rounded-full blur-3xl"></div>
-      </div>
-
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
+    <section className="bg-gray-50 py-16 md:py-24">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12">
         {/* Section Header */}
-        <motion.div
-          className="mb-12 md:mb-16 space-y-4"
-          initial={{ opacity: 0, y: -30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-sm md:text-base tracking-[0.2em] text-secondary uppercase font-bold">
-            Featured Productions
-          </h3>
-          <h2 className="text-5xl md:text-6xl lg:text-7xl cinematic-text">
-            Curated Collection
+        <div className="text-center mb-12 md:mb-16">
+          <span className="inline-block px-4 py-2 bg-orange-100 text-orange-600 rounded-full text-sm font-semibold uppercase tracking-wider mb-4">
+            Featured Shows
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900">
+            Top Shows
           </h2>
-        </motion.div>
+          <p className="text-gray-600 text-lg md:text-xl mt-4 max-w-2xl mx-auto">
+            Discover our most popular programming delivering premium entertainment and insights
+          </p>
+        </div>
 
         {/* Shows Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-          {shows.map((show, index) => (
-            <motion.div
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+          {shows.map((show) => (
+            <div
               key={show.id}
-              className="group relative overflow-hidden rounded-lg"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -5 }}
+              className="group relative overflow-hidden rounded-xl md:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
             >
               {/* Show Image */}
-              <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
+              <div className="relative aspect-[3/4] overflow-hidden">
                 <img
                   src={show.image}
                   alt={show.title}
@@ -72,27 +60,36 @@ export default function TopShowsSection() {
                 />
 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-100 group-hover:from-black/90 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
                 {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-
-                {/* Title */}
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                  <h3 className="text-white text-2xl md:text-3xl font-black tracking-wide leading-tight transform transition-transform duration-300 group-hover:scale-105">
-                    {show.title}
-                  </h3>
-                </div>
-
-                {/* Decorative Corner Borders */}
-                <div className="absolute top-0 left-0 w-0 h-0 border-t-3 border-l-3 border-secondary/0 group-hover:w-12 group-hover:h-12 group-hover:border-secondary/80 transition-all duration-500 rounded-tl-lg"></div>
-                <div className="absolute bottom-0 right-0 w-0 h-0 border-b-3 border-r-3 border-secondary/0 group-hover:w-12 group-hover:h-12 group-hover:border-secondary/80 transition-all duration-500 rounded-br-lg"></div>
+                <div className="absolute inset-0 bg-orange-600/0 group-hover:bg-orange-600/20 transition-all duration-500"></div>
               </div>
 
-              {/* Glow Effect */}
-              <div className="absolute inset-0 rounded-lg shadow-[0_0_30px_rgba(139,0,0,0.2)] group-hover:shadow-[0_0_50px_rgba(139,0,0,0.4)] transition-shadow duration-500 pointer-events-none"></div>
-            </motion.div>
+              {/* Show Info */}
+              <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                <h3 className="text-white text-lg sm:text-xl md:text-2xl font-black tracking-wide leading-tight mb-1">
+                  {show.title}
+                </h3>
+                <p className="text-orange-300 text-xs sm:text-sm font-semibold">
+                  {show.subtitle}
+                </p>
+              </div>
+
+              {/* Corner Accent */}
+              <div className="absolute top-0 left-0 w-0 h-0 border-t-[3px] border-l-[3px] border-orange-500/0 group-hover:w-12 group-hover:h-12 group-hover:border-orange-500 transition-all duration-500 rounded-tl-xl md:rounded-tl-2xl"></div>
+            </div>
           ))}
+        </div>
+
+        {/* View All Button */}
+        <div className="text-center mt-12">
+          <a 
+            href="/portfolio"
+            className="inline-block bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg font-bold text-sm uppercase tracking-wide transition-all duration-300 shadow-lg hover:shadow-xl"
+          >
+            View All Shows
+          </a>
         </div>
       </div>
     </section>

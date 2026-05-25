@@ -1,6 +1,7 @@
 "use client"
 
 import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 import { useState } from "react"
 import { Play, Film, Award } from "lucide-react"
 import SpotlightProject from "@/components/Spotlight"
@@ -459,6 +460,9 @@ export default function FilmPortfolioPage() {
           </div>
         </div>
       )}
+
+      {/* Footer */}
+      <Footer />
 
       <style jsx>{`
         @keyframes fadeInUp {

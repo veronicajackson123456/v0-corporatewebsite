@@ -1,162 +1,133 @@
 "use client"
-import { Mail, MapPin, Instagram, Twitter, Linkedin } from "lucide-react"
-import { motion } from "framer-motion"
+import { Mail, MapPin, ExternalLink } from "lucide-react"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  }
-
   return (
-    <footer className="relative bg-background border-t border-secondary/20">
+    <footer className="relative gradient-orange">
       {/* Decorative Top Border */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-40"></div>
+      <div className="h-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"></div>
 
-      {/* Top Section */}
+      {/* Main Footer Content */}
       <div className="container mx-auto px-4 md:px-8 py-12 md:py-16">
-        <motion.div
-          className="grid md:grid-cols-4 gap-10 md:gap-12"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
           {/* Company Info */}
-          <motion.div className="md:col-span-2" variants={itemVariants}>
-            <h3 className="text-3xl md:text-4xl cinematic-text mb-4">A Beautiful Kill</h3>
-            <p className="text-muted-foreground text-sm md:text-base mb-6 max-w-md leading-relaxed">
-              Crafting extraordinary cinematic experiences through premium production services and visionary storytelling on the global stage.
-            </p>
-            <div className="flex items-center gap-2 text-secondary text-xs uppercase tracking-wider font-semibold">
-              <div className="w-8 h-0.5 bg-secondary"></div>
-              <span>Premium Cinema Solutions</span>
+          <div className="sm:col-span-2 lg:col-span-2">
+            <div className="bg-white px-4 py-2 rounded-lg inline-block mb-4 shadow-md">
+              <h3 className="text-2xl md:text-3xl font-bold text-orange-600">CNBC</h3>
             </div>
-          </motion.div>
+            <p className="text-white/90 text-sm md:text-base mb-6 max-w-md leading-relaxed">
+              Corporate Network Broadcasting Cinema delivers premium broadcasting services and cinematic content
+              distribution across global media platforms.
+            </p>
+            <div className="flex items-center gap-2 text-white text-xs uppercase tracking-wider font-semibold">
+              <div className="w-8 h-0.5 bg-white"></div>
+              <span>Enterprise Media Solutions</span>
+            </div>
+          </div>
 
           {/* Contact Info */}
-          <motion.div variants={itemVariants}>
-            <h4 className="text-foreground font-bold text-lg mb-4 tracking-wide">Connect</h4>
-            <ul className="space-y-3">
-              <li className="flex items-start gap-3 text-muted-foreground text-sm md:text-base hover:text-secondary transition-colors duration-300">
-                <Mail className="w-5 h-5 mt-0.5 text-secondary flex-shrink-0" />
-                <span>contact@abeautifulkill.film</span>
+          <div>
+            <h4 className="text-white font-bold text-lg mb-4 tracking-wide">Connect</h4>
+            <ul className="space-y-4">
+              <li className="flex items-start gap-3 text-white/90 text-sm md:text-base">
+                <Mail className="w-5 h-5 mt-0.5 text-white flex-shrink-0" />
+                <a href="mailto:cnbc.jp@gmail.com" className="hover:text-white hover:underline transition-colors">
+                  cnbc.jp@gmail.com
+                </a>
               </li>
-
-              <li className="flex items-start gap-3 text-muted-foreground text-sm md:text-base hover:text-secondary transition-colors duration-300">
-                <MapPin className="w-5 h-5 mt-0.5 text-secondary flex-shrink-0" />
-                <span>Marbella, Spain</span>
+              <li className="flex items-start gap-3 text-white/90 text-sm md:text-base">
+                <MapPin className="w-5 h-5 mt-0.5 text-white flex-shrink-0" />
+                <span>30 North Gould Street,<br />Sheridan, Wyoming, USA</span>
+              </li>
+              <li className="flex items-start gap-3 text-white/90 text-sm md:text-base mt-4">
+                <ExternalLink className="w-5 h-5 mt-0.5 text-white flex-shrink-0" />
+                <a 
+                  href="https://ionplustv.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-white hover:underline transition-colors"
+                >
+                  ION Plus TV
+                </a>
               </li>
             </ul>
-          </motion.div>
+          </div>
 
           {/* Legal Links */}
-          <motion.div variants={itemVariants}>
-            <h4 className="text-foreground font-bold text-lg mb-4 tracking-wide">Legal</h4>
+          <div>
+            <h4 className="text-white font-bold text-lg mb-4 tracking-wide">Legal</h4>
             <ul className="space-y-2">
               <li>
-                <a href="/terms" className="text-muted-foreground text-sm md:text-base hover:text-secondary transition-colors duration-300">
+                <a href="/terms" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300 block py-1">
                   Terms of Service
                 </a>
               </li>
               <li>
-                <a href="/privacy-policy" className="text-muted-foreground text-sm md:text-base hover:text-secondary transition-colors duration-300">
+                <a href="/privacy-policy" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300 block py-1">
                   Privacy Policy
                 </a>
               </li>
               <li>
-                <a href="/cookie-policy" className="text-muted-foreground text-sm md:text-base hover:text-secondary transition-colors duration-300">
+                <a href="/cookie-policy" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300 block py-1">
                   Cookie Policy
                 </a>
               </li>
               <li>
-                <a href="/accessibility-statement" className="text-muted-foreground text-sm md:text-base hover:text-secondary transition-colors duration-300">
+                <a href="/accessibility-statement" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300 block py-1">
                   Accessibility
                 </a>
               </li>
+              <li>
+                <a href="/disclaimer" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300 block py-1">
+                  Disclaimer
+                </a>
+              </li>
+              <li>
+                <a href="/cancellation-refund" className="text-white/80 text-sm md:text-base hover:text-white transition-colors duration-300 block py-1">
+                  Refund Policy
+                </a>
+              </li>
             </ul>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </div>
 
       {/* Divider */}
-      <div className="border-t border-secondary/20"></div>
+      <div className="border-t border-white/20"></div>
 
       {/* Bottom Section */}
-      <div className="container mx-auto px-4 md:px-8 py-8">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Copyright */}
-          <div className="text-center md:text-left">
-            <p className="text-muted-foreground text-sm">
-              Copyright © {currentYear} A Beautiful Kill. All rights reserved.
-            </p>
+      <div className="container mx-auto px-4 md:px-8 py-6">
+        <div className="flex flex-col gap-4 text-center">
+          {/* Production / Sponsorship */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-xs md:text-sm text-white/90">
+            <span className="uppercase tracking-wide">
+              PRODUCTION: <span className="font-semibold">CNBC LLC, USA</span>
+            </span>
+            <span className="hidden sm:inline text-white/60">|</span>
+            <span className="uppercase tracking-wide">
+              ADVERTISING / SPONSORSHIP: <span className="font-semibold">HMCFO LTD</span>
+            </span>
           </div>
 
-          {/* Social Links */}
-          <div className="flex items-center gap-4">
-            <motion.a
-              href="#"
-              className="p-2 rounded-full glass hover:bg-white/20 transition-all duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Instagram"
-            >
-              <Instagram className="w-5 h-5 text-secondary" />
-            </motion.a>
-            <motion.a
-              href="#"
-              className="p-2 rounded-full glass hover:bg-white/20 transition-all duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="Twitter"
-            >
-              <Twitter className="w-5 h-5 text-secondary" />
-            </motion.a>
-            <motion.a
-              href="#"
-              className="p-2 rounded-full glass hover:bg-white/20 transition-all duration-300"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-              aria-label="LinkedIn"
-            >
-              <Linkedin className="w-5 h-5 text-secondary" />
-            </motion.a>
-          </div>
-
-          {/* Additional Links */}
-          <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-muted-foreground">
-            <a href="/terms" className="hover:text-secondary transition-colors duration-300">
-              Terms
-            </a>
-            <span className="text-secondary/40">•</span>
-            <a href="/privacy-policy" className="hover:text-secondary transition-colors duration-300">
-              Privacy
-            </a>
-            <span className="text-secondary/40">•</span>
-            <a href="/cookie-policy" className="hover:text-secondary transition-colors duration-300">
-              Cookies
-            </a>
+          {/* Copyright + Quick Links */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-2 text-[11px] md:text-xs text-white/80">
+            <span>Copyright {currentYear} CNBC LLC. All rights reserved.</span>
+            <span className="hidden sm:inline text-white/60">|</span>
+            <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4">
+              <a href="/terms" className="hover:text-white transition-colors duration-300">Terms</a>
+              <span className="text-white/40">|</span>
+              <a href="/privacy-policy" className="hover:text-white transition-colors duration-300">Privacy</a>
+              <span className="text-white/40">|</span>
+              <a href="/contact" className="hover:text-white transition-colors duration-300">Contact</a>
+            </div>
           </div>
         </div>
       </div>
 
       {/* Decorative Bottom Border */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-40"></div>
+      <div className="h-1 bg-gradient-to-r from-transparent via-white to-transparent opacity-30"></div>
     </footer>
   )
 }
