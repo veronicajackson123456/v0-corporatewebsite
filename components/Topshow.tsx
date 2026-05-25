@@ -1,51 +1,70 @@
 "use client"
 
+import { motion } from "framer-motion"
+
 export default function TopShowsSection() {
   const shows = [
     {
       id: 1,
-      title: "POWER LUNCH",
+      title: "PREMIUM COLLECTION",
       image: "/aa.jpg",
-      gradient: "from-blue-900/60 to-transparent",
     },
     {
       id: 2,
-      title: "CLOSING BELL",
+      title: "CINEMATIC VISION",
       image: "/hh.jpg",
-      gradient: "from-gray-900/60 to-transparent",
     },
     {
       id: 3,
-      title: "SQUAWK BOX",
+      title: "STORYTELLING ART",
       image: "/hh1.jpg",
-      gradient: "from-orange-900/60 to-transparent",
     },
     {
       id: 4,
-      title: "MAD MONEY",
+      title: "VISUAL EXCELLENCE",
       image: "/h1.jpg",
-      gradient: "from-red-900/60 to-transparent",
     },
   ]
 
   return (
-    <section className="bg-white py-16 md:py-20 lg:py-24">
-      <div className="container mx-auto px-4 md:px-8 lg:px-12">
-        {/* Section Title */}
-        <h2 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 mb-12 md:mb-16">Top Shows</h2>
+    <section className="relative py-20 md:py-28 lg:py-32 bg-background overflow-hidden">
+      {/* Ambient effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-1/4 -left-96 w-96 h-96 bg-red-900/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 -right-96 w-96 h-96 bg-red-900/5 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
+        {/* Section Header */}
+        <motion.div
+          className="mb-12 md:mb-16 space-y-4"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
+          <h3 className="text-sm md:text-base tracking-[0.2em] text-secondary uppercase font-bold">
+            Featured Productions
+          </h3>
+          <h2 className="text-5xl md:text-6xl lg:text-7xl cinematic-text">
+            Curated Collection
+          </h2>
+        </motion.div>
 
         {/* Shows Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {shows.map((show, index) => (
-            <div
+            <motion.div
               key={show.id}
-              className="group relative overflow-hidden rounded-lg shadow-lg transition-all duration-500"
-              style={{
-                animation: `fadeInUp 0.6s ease-out ${index * 0.1}s both`,
-              }}
+              className="group relative overflow-hidden rounded-lg"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1, duration: 0.6 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
             >
               {/* Show Image */}
-              <div className="relative aspect-[3/4] overflow-hidden">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
                 <img
                   src={show.image}
                   alt={show.title}
@@ -53,38 +72,29 @@ export default function TopShowsSection() {
                 />
 
                 {/* Gradient Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-t ${show.gradient}`}></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-100 group-hover:from-black/90 transition-all duration-500"></div>
 
                 {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
+
+                {/* Title */}
+                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+                  <h3 className="text-white text-2xl md:text-3xl font-black tracking-wide leading-tight transform transition-transform duration-300 group-hover:scale-105">
+                    {show.title}
+                  </h3>
+                </div>
+
+                {/* Decorative Corner Borders */}
+                <div className="absolute top-0 left-0 w-0 h-0 border-t-3 border-l-3 border-secondary/0 group-hover:w-12 group-hover:h-12 group-hover:border-secondary/80 transition-all duration-500 rounded-tl-lg"></div>
+                <div className="absolute bottom-0 right-0 w-0 h-0 border-b-3 border-r-3 border-secondary/0 group-hover:w-12 group-hover:h-12 group-hover:border-secondary/80 transition-all duration-500 rounded-br-lg"></div>
               </div>
 
-              {/* Show Title */}
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
-                <h3 className="text-white text-2xl md:text-3xl font-black tracking-wide leading-tight transform transition-transform duration-300 group-hover:scale-105">
-                  {show.title}
-                </h3>
-              </div>
-
-              {/* Decorative Corner Border */}
-              <div className="absolute top-0 left-0 w-0 h-0 border-t-4 border-l-4 border-white/0 group-hover:w-16 group-hover:h-16 group-hover:border-white/50 transition-all duration-500 rounded-tl-lg"></div>
-            </div>
+              {/* Glow Effect */}
+              <div className="absolute inset-0 rounded-lg shadow-[0_0_30px_rgba(139,0,0,0.2)] group-hover:shadow-[0_0_50px_rgba(139,0,0,0.4)] transition-shadow duration-500 pointer-events-none"></div>
+            </motion.div>
           ))}
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   )
 }
