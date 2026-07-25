@@ -184,7 +184,7 @@ export default function AccessibilityStatementPage() {
         {
           text: "If you experience accessibility issues or have suggestions for improvement, please contact us. We welcome your feedback and will work to resolve any barriers you encounter.",
           list: [
-            "Email: cnbc.jp@gmail.com",
+            "Email: info@cnbc.cc",
             "Phone: Contact our support team",
             "Response time: We will respond within 5 business days",
           ],

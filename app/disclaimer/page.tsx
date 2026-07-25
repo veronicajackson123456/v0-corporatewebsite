@@ -181,7 +181,7 @@ export default function DisclaimerPage() {
         {
           text: "If you have questions about this disclaimer, please contact us:",
           list: [
-            "Email: cnbc.jp@gmail.com",
+            "Email: info@cnbc.cc",
             "Address: Broadcasting & Media District",
             "Response time: Within 30 days",
           ],

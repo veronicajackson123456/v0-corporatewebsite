@@ -210,7 +210,7 @@ export default function PrivacyPolicyPage() {
         {
           text: "If you have questions about this Privacy Policy or our privacy practices, please contact us at:",
           list: [
-            "Email: cnbc.jp@gmail.com",
+            "Email: info@cnbc.cc",
             "Address: Broadcasting & Media District",
             "We will respond to your inquiry within 30 days",
           ],

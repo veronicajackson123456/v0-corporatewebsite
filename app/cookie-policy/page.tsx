@@ -179,7 +179,7 @@ export default function CookiePolicyPage() {
         {
           text: "If you have questions about our Cookie Policy or wish to modify your cookie preferences, please contact us at:",
           list: [
-            "Email: cnbc.jp@gmail.com",
+            "Email: info@cnbc.cc",
             "Address: Broadcasting & Media District",
           ],
         },
