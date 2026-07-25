@@ -1,121 +1,165 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-
 export default function LandingPage() {
-  const handleIONRedirect = () => {
-    window.open("https://ionplustv.com/", "_blank", "noopener,noreferrer")
-  }
-
-  const handleCNBCRedirect = () => {
-    window.location.href = "/home"
-  }
-
   return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-black font-sans">
+    <div className="relative min-h-screen w-full overflow-hidden bg-black">
 
-      {/* ── Full-bleed cinematic background ── */}
+      {/* ── Full-bleed background photo ── */}
       <div className="absolute inset-0">
         <img
           src="/hh.jpg"
           alt=""
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center scale-105"
+          style={{ filter: "brightness(0.55) saturate(1.1)" }}
         />
-        {/* Deep layered scrim so text is always legible */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/90" />
-        {/* Warm orange tint to unify with brand */}
-        <div className="absolute inset-0 bg-orange-900/20 mix-blend-multiply" />
+        {/* Multi-layer gradient for depth and warmth */}
+        <div className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.20) 60%, rgba(0,0,0,0.80) 100%)"
+          }}
+        />
+        {/* Warm amber vignette from the bottom */}
+        <div className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 110% 60% at 50% 100%, rgba(194,97,12,0.38) 0%, transparent 70%)"
+          }}
+        />
+        {/* Subtle side vignettes */}
+        <div className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 50% 100% at 0% 50%, rgba(0,0,0,0.45) 0%, transparent 60%), radial-gradient(ellipse 50% 100% at 100% 50%, rgba(0,0,0,0.45) 0%, transparent 60%)"
+          }}
+        />
       </div>
 
-      {/* ── Top bar ── */}
-      <header className="relative z-20 flex items-center justify-between px-6 md:px-12 py-6">
-        <span className="text-white text-sm font-bold tracking-[0.25em] uppercase opacity-80">
-          CNBC
-        </span>
-        <span className="text-white/50 text-xs tracking-widest uppercase hidden sm:block">
-          Corporate Network Broadcasting Cinema
-        </span>
-        <div className="w-12" /> {/* spacer to keep logo centred */}
-      </header>
+      {/* ── Navbar ── */}
+      <nav className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-6 md:px-14 py-6">
+        {/* CNBC logo */}
+        <a href="/home" className="group flex-shrink-0">
+          <div className="px-4 py-1.5 rounded-lg bg-orange-500 group-hover:bg-orange-600 transition-colors duration-200 shadow-lg">
+            <span className="text-white text-xl font-bold tracking-tight">CNBC</span>
+          </div>
+        </a>
 
-      {/* ── Hero content ── */}
-      <main className="relative z-20 flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-6 text-center">
+        {/* Nav links — center */}
+        <div className="hidden lg:flex items-center gap-8">
+          {[
+            { label: "HOME", href: "/home" },
+            { label: "FILM PRODUCTION", href: "/portfolio" },
+            { label: "SPONSORS", href: "/sponsors" },
+            { label: "CONTACT", href: "/contact" },
+          ].map((item) => (
+            <a
+              key={item.href}
+              href={item.href}
+              className="relative text-white/80 hover:text-white text-xs font-semibold tracking-[0.18em] uppercase transition-colors duration-200 after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
 
-        {/* Eyebrow */}
-        <p className="text-orange-400 text-xs md:text-sm font-semibold tracking-[0.3em] uppercase mb-6 flex items-center gap-3">
-          <span className="inline-block w-8 h-px bg-orange-400" />
-          Est. 2024
-          <span className="inline-block w-8 h-px bg-orange-400" />
-        </p>
+        {/* ION logo */}
+        <a
+          href="https://ionplustv.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group flex-shrink-0"
+        >
+          <div className="px-4 py-1.5 rounded-lg bg-white group-hover:bg-gray-100 transition-colors duration-200 shadow-lg">
+            <span className="text-blue-700 text-xl font-bold tracking-tight">ION</span>
+          </div>
+        </a>
+      </nav>
 
-        {/* Main headline — no "CNBC" in colour, just the full name */}
-        <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight max-w-5xl text-balance mb-4">
-          Welcome to Corporate Network Broadcasting Cinema
+      {/* ── Main hero content ── */}
+      <main className="relative z-20 flex flex-col items-center justify-center min-h-screen px-6 text-center">
+
+        {/* Thin rule above */}
+        <div className="flex items-center gap-4 mb-8">
+          <div className="h-px w-16 bg-orange-400/70" />
+          <span className="text-orange-300 text-[11px] font-semibold tracking-[0.35em] uppercase">
+            Est. 2024
+          </span>
+          <div className="h-px w-16 bg-orange-400/70" />
+        </div>
+
+        {/* Main heading */}
+        <h1
+          className="text-white font-bold leading-[1.08] tracking-tight text-balance mb-6"
+          style={{ fontSize: "clamp(2rem, 5.5vw, 5rem)", maxWidth: "900px" }}
+        >
+          Welcome to{" "}
+          <span className="block text-white">
+            Corporate Network Broadcasting Cinema
+          </span>
         </h1>
 
-        {/* Sub-line */}
-        <p className="text-white/60 text-base md:text-lg max-w-xl leading-relaxed mb-14 text-balance">
+        {/* Thin divider */}
+        <div className="w-20 h-0.5 bg-orange-500 mb-8 rounded-full" />
+
+        {/* Sub-copy */}
+        <p className="text-white/65 text-base md:text-lg max-w-lg leading-relaxed mb-14 text-balance">
           Premium film production and broadcast entertainment — crafted for global audiences.
         </p>
 
-        {/* ── Two portal cards ── */}
-        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 w-full max-w-2xl">
+        {/* ── CTA buttons ── */}
+        <div className="flex flex-col sm:flex-row items-stretch gap-4 w-full max-w-sm sm:max-w-none sm:justify-center">
 
-          {/* CNBC card */}
-          <button
-            onClick={handleCNBCRedirect}
-            className="group flex-1 relative overflow-hidden rounded-2xl bg-orange-500 hover:bg-orange-600 transition-colors duration-300 text-left"
+          {/* CNBC */}
+          <a
+            href="/home"
+            className="group relative overflow-hidden rounded-2xl bg-orange-500 hover:bg-orange-600 transition-all duration-300 shadow-2xl hover:shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0"
+            style={{ minWidth: 220 }}
           >
-            {/* Background image thumbnail */}
-            <div className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-300">
-              <img src="/1.jpg" alt="" className="w-full h-full object-cover" />
-            </div>
-            <div className="relative z-10 px-7 py-7 flex flex-col gap-3">
-              <span className="text-white/70 text-xs font-semibold tracking-[0.2em] uppercase">Enter</span>
-              <span className="text-white text-2xl md:text-3xl font-bold tracking-tight">CNBC</span>
-              <span className="text-white/80 text-sm leading-snug">
-                Film production, broadcasting & original content
+            <div className="absolute inset-0 bg-gradient-to-br from-orange-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative z-10 flex flex-col items-center px-10 py-5 gap-1">
+              <span className="text-orange-100/70 text-[10px] font-semibold tracking-[0.25em] uppercase">
+                Click here for
               </span>
-              <span className="mt-2 inline-flex items-center gap-2 text-white text-xs font-semibold tracking-widest uppercase">
-                Explore
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
+              <span className="text-white text-2xl font-bold tracking-tight">CNBC</span>
             </div>
-          </button>
+          </a>
 
-          {/* ION Plus card */}
-          <button
-            onClick={handleIONRedirect}
-            className="group flex-1 relative overflow-hidden rounded-2xl bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/40 backdrop-blur-md transition-all duration-300 text-left"
+          {/* Divider on desktop */}
+          <div className="hidden sm:flex items-center">
+            <div className="w-px h-16 bg-white/20 rounded-full" />
+          </div>
+
+          {/* ION Plus */}
+          <a
+            href="https://ionplustv.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group relative overflow-hidden rounded-2xl bg-blue-700 hover:bg-blue-800 transition-all duration-300 shadow-2xl hover:shadow-blue-700/40 hover:-translate-y-0.5 active:translate-y-0"
+            style={{ minWidth: 220 }}
           >
-            <div className="absolute inset-0 opacity-15 group-hover:opacity-25 transition-opacity duration-300">
-              <img src="/h1.jpg" alt="" className="w-full h-full object-cover" />
-            </div>
-            <div className="relative z-10 px-7 py-7 flex flex-col gap-3">
-              <span className="text-white/60 text-xs font-semibold tracking-[0.2em] uppercase">Visit</span>
-              <span className="text-white text-2xl md:text-3xl font-bold tracking-tight">ION Plus</span>
-              <span className="text-white/70 text-sm leading-snug">
-                Entertainment network for premium streaming
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="relative z-10 flex flex-col items-center px-10 py-5 gap-1">
+              <span className="text-blue-200/70 text-[10px] font-semibold tracking-[0.25em] uppercase">
+                Click here
               </span>
-              <span className="mt-2 inline-flex items-center gap-2 text-white text-xs font-semibold tracking-widest uppercase">
-                Discover
-                <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
+              <span className="text-white text-2xl font-bold tracking-tight">ION Plus</span>
             </div>
-          </button>
+          </a>
 
         </div>
 
-        {/* ── Disclaimer ── */}
-        <p className="mt-10 text-white/30 text-xs max-w-md leading-relaxed text-balance">
+        {/* Disclaimer */}
+        <p className="mt-12 text-white/30 text-[11px] max-w-sm leading-relaxed text-balance">
           We are an independent film production and broadcasting company, not affiliated with or representative of CNBC News.
         </p>
 
       </main>
+
+      {/* ── Decorative bottom gradient bar ── */}
+      <div
+        className="absolute bottom-0 left-0 right-0 h-1 z-30"
+        style={{ background: "linear-gradient(90deg, transparent, #f97316, #ea580c, transparent)" }}
+      />
     </div>
   )
 }
