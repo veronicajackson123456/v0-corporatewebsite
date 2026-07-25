@@ -78,80 +78,69 @@ export default function LandingPage() {
       {/* ── Main hero content ── */}
       <main className="relative z-20 flex flex-col items-center justify-center min-h-screen px-6 text-center">
 
-        {/* Thin rule above */}
-        <div className="flex items-center gap-4 mb-8">
-          <div className="h-px w-16 bg-orange-400/70" />
-          <span className="text-orange-300 text-[11px] font-semibold tracking-[0.35em] uppercase">
-            Est. 2024
-          </span>
-          <div className="h-px w-16 bg-orange-400/70" />
-        </div>
-
         {/* Main heading */}
-        <h1
-          className="text-white font-bold leading-[1.08] tracking-tight text-balance mb-6"
-          style={{ fontSize: "clamp(2rem, 5.5vw, 5rem)", maxWidth: "900px" }}
-        >
-          Welcome to{" "}
-          <span className="block text-white">
-            Corporate Network Broadcasting Cinema
-          </span>
+        <h1 className="text-6xl md:text-7xl font-bold leading-tight tracking-tight mb-6">
+          <span className="text-white">Welcome to </span>
+          <span className="text-orange-500">CNBC</span>
         </h1>
 
-        {/* Thin divider */}
-        <div className="w-20 h-0.5 bg-orange-500 mb-8 rounded-full" />
-
-        {/* Sub-copy */}
-        <p className="text-white/65 text-base md:text-lg max-w-lg leading-relaxed mb-14 text-balance">
-          Premium film production and broadcast entertainment — crafted for global audiences.
+        {/* Subtitle */}
+        <p className="text-white/80 text-lg md:text-xl mb-12 font-light tracking-wide">
+          Corporate Network Broadcasting Cinema
         </p>
 
         {/* ── CTA buttons ── */}
-        <div className="flex flex-col sm:flex-row items-stretch gap-4 w-full max-w-sm sm:max-w-none sm:justify-center">
+        <div className="flex flex-col items-center gap-2 mb-8">
 
-          {/* CNBC */}
-          <a
-            href="/home"
-            className="group relative overflow-hidden rounded-2xl bg-orange-500 hover:bg-orange-600 transition-all duration-300 shadow-2xl hover:shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0"
-            style={{ minWidth: 220 }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative z-10 flex flex-col items-center px-10 py-5 gap-1">
-              <span className="text-orange-100/70 text-[10px] font-semibold tracking-[0.25em] uppercase">
-                Click here for
-              </span>
-              <span className="text-white text-2xl font-bold tracking-tight">CNBC</span>
-            </div>
-          </a>
-
-          {/* Divider on desktop */}
-          <div className="hidden sm:flex items-center">
-            <div className="w-px h-16 bg-white/20 rounded-full" />
+          {/* Button labels */}
+          <div className="flex justify-center gap-24 mb-4 w-full">
+            <span className="text-white/50 text-xs tracking-wide">Click here for</span>
+            <span className="text-white/50 text-xs tracking-wide">Click here</span>
           </div>
 
-          {/* ION Plus */}
-          <a
-            href="https://ionplustv.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative overflow-hidden rounded-2xl bg-blue-700 hover:bg-blue-800 transition-all duration-300 shadow-2xl hover:shadow-blue-700/40 hover:-translate-y-0.5 active:translate-y-0"
-            style={{ minWidth: 220 }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative z-10 flex flex-col items-center px-10 py-5 gap-1">
-              <span className="text-blue-200/70 text-[10px] font-semibold tracking-[0.25em] uppercase">
-                Click here
-              </span>
-              <span className="text-white text-2xl font-bold tracking-tight">ION Plus</span>
-            </div>
-          </a>
+          {/* Buttons row */}
+          <div className="flex gap-8 justify-center">
+            {/* CNBC */}
+            <a
+              href="/home"
+              className="group relative overflow-hidden rounded-full bg-orange-500 hover:bg-orange-600 transition-all duration-300 shadow-2xl hover:shadow-orange-500/50 px-20 py-3"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative z-10 text-white text-lg font-bold tracking-wide">CNBC</span>
+            </a>
+
+            {/* ION Plus */}
+            <a
+              href="https://ionplustv.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group relative overflow-hidden rounded-full bg-blue-600 hover:bg-blue-700 transition-all duration-300 shadow-2xl hover:shadow-blue-600/50 px-20 py-3"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative z-10 text-white text-lg font-bold tracking-wide">ION Plus</span>
+            </a>
+          </div>
 
         </div>
 
-        {/* Disclaimer */}
-        <p className="mt-12 text-white/30 text-[11px] max-w-sm leading-relaxed text-balance">
-          We are an independent film production and broadcasting company, not affiliated with or representative of CNBC News.
-        </p>
+        {/* Orange divider line */}
+        <div className="w-24 h-1 bg-orange-500 my-8 rounded-full" />
+
+        {/* Disclaimer Box */}
+        <div className="mt-16 w-full max-w-2xl bg-black/40 backdrop-blur-sm border border-orange-500/30 rounded-lg p-6">
+          <div className="flex gap-4">
+            <div className="text-orange-500 text-lg font-bold flex-shrink-0 mt-0.5">ⓘ</div>
+            <div>
+              <h3 className="text-orange-500 text-sm font-bold tracking-wide mb-2">IMPORTANT NOTICE</h3>
+              <p className="text-white/80 text-xs leading-relaxed">
+                We are not connected to or representatives of CNBC News. They are a different company and not affiliated with us in any way.
+              </p>
+              <p className="text-white/70 text-xs leading-relaxed mt-2">
+                Corporate Network Broadcasting Cinema operates independently as a film production and broadcasting company.
+              </p>
+            </div>
+          </div>
+        </div>
 
       </main>
 
