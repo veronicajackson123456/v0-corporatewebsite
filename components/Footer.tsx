@@ -28,8 +28,7 @@ export default function Footer() {
               </div>
               <div className="text-white/80 text-xs not-uppercase tracking-normal font-normal pl-0">
                 <p className="font-semibold text-white mb-1">CNBC LLC</p>
-                <p>EIN: 45-1234567</p>
-                <p>Company Number: LLC-2024-005847</p>
+                <p>EIN: 38-4352621</p>
               </div>
             </div>
           </div>
@@ -40,8 +39,8 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-white/90 text-sm md:text-base">
                 <Mail className="w-5 h-5 mt-0.5 text-white flex-shrink-0" />
-                <a href="mailto:cnbc.jp@gmail.com" className="hover:text-white hover:underline transition-colors">
-                  cnbc.jp@gmail.com
+                <a href="mailto:info@cnbc.cc" className="hover:text-white hover:underline transition-colors">
+                  info@cnbc.cc
                 </a>
               </li>
               <li className="flex items-start gap-3 text-white/90 text-sm md:text-base">
