@@ -35,8 +35,8 @@ export default function LandingPage() {
         <div className="mb-8"></div>
 
         {/* Main headline */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-center">
-          <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent font-sans">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-center max-w-4xl">
+          <span className="bg-gradient-to-r from-orange-400 via-white to-blue-400 bg-clip-text text-transparent font-sans drop-shadow-lg">
             Welcome to Corporate Network Broadcasting Cinema
           </span>
         </h1>
