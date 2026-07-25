@@ -35,13 +35,13 @@ export default function LandingPage() {
         <div className="mb-8"></div>
 
         {/* Main headline */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight text-center max-w-5xl leading-tight">
-          <span className="bg-gradient-to-r from-white to-orange-300 bg-clip-text text-transparent font-sans">
-            Welcome to Corporate Network
+        <h1 className="text-5xl md:text-6xl lg:text-6xl font-bold mb-6 tracking-tight text-center max-w-3xl leading-tight">
+          <span className="text-white font-sans">
+            Welcome to
           </span>
           <br />
-          <span className="bg-gradient-to-r from-orange-300 to-blue-400 bg-clip-text text-transparent font-sans">
-            Broadcasting Cinema
+          <span className="bg-gradient-to-r from-orange-400 to-orange-500 bg-clip-text text-transparent font-sans">
+            Corporate Network Broadcasting Cinema
           </span>
         </h1>
 
