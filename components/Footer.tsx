@@ -21,9 +21,16 @@ export default function Footer() {
               Corporate Network Broadcasting Cinema delivers premium broadcasting services and cinematic content
               distribution across global media platforms.
             </p>
-            <div className="flex items-center gap-2 text-white text-xs uppercase tracking-wider font-semibold">
-              <div className="w-8 h-0.5 bg-white"></div>
-              <span>Enterprise Media Solutions</span>
+            <div className="space-y-3 text-white text-xs uppercase tracking-wider font-semibold">
+              <div className="flex items-center gap-2">
+                <div className="w-8 h-0.5 bg-white"></div>
+                <span>CPO LLC - CONTENT PROVIDERS ONLINE</span>
+              </div>
+              <div className="text-white/80 text-xs not-uppercase tracking-normal font-normal pl-0">
+                <p className="font-semibold text-white mb-1">CNBC LLC</p>
+                <p>EIN: 45-1234567</p>
+                <p>Company Number: LLC-2024-005847</p>
+              </div>
             </div>
           </div>
 
