@@ -1,165 +1,121 @@
 "use client"
 
-export default function LandingPage() {
-  return (
-    <div className="relative min-h-screen w-full overflow-hidden bg-black">
+import Navbar from "@/components/Navbar"
 
-      {/* ── Full-bleed background photo ── */}
-      <div className="absolute inset-0">
-        <img
-          src="/hh.jpg"
-          alt=""
-          className="w-full h-full object-cover object-center scale-105"
-          style={{ filter: "brightness(0.55) saturate(1.1)" }}
-        />
-        {/* Multi-layer gradient for depth and warmth */}
-        <div className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.15) 40%, rgba(0,0,0,0.20) 60%, rgba(0,0,0,0.80) 100%)"
-          }}
-        />
-        {/* Warm amber vignette from the bottom */}
-        <div className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 110% 60% at 50% 100%, rgba(194,97,12,0.38) 0%, transparent 70%)"
-          }}
-        />
-        {/* Subtle side vignettes */}
-        <div className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 50% 100% at 0% 50%, rgba(0,0,0,0.45) 0%, transparent 60%), radial-gradient(ellipse 50% 100% at 100% 50%, rgba(0,0,0,0.45) 0%, transparent 60%)"
-          }}
-        />
+export default function LandingPage() {
+  const handleIONRedirect = () => {
+    window.open("https://ionplustv.com/", "_blank", "noopener,noreferrer")
+  }
+
+  const handleCNBCRedirect = () => {
+    window.location.href = "/home"
+  }
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-zinc-950 via-slate-900 to-zinc-950 relative overflow-hidden flex flex-col">
+      <Navbar />
+
+      {/* Animated background gradient orbs */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-orange-600/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-1/2 left-1/3 w-80 h-80 bg-blue-600/5 rounded-full blur-3xl"></div>
+
+      {/* Main content container */}
+      <div className="relative z-10 flex-1 flex flex-col items-center justify-center px-4 md:px-6 py-12">
+        {/* Top accent line with animation */}
+        <div className="w-32 h-1.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent mb-16 rounded-full"></div>
+
+        {/* Main headline - Full company name, no CNBC in orange */}
+        <div className="mb-8 text-center max-w-4xl">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tighter leading-tight">
+            <span className="bg-gradient-to-r from-white via-gray-100 to-white bg-clip-text text-transparent font-sans block">
+              Welcome to
+            </span>
+            <span className="bg-gradient-to-r from-orange-300 via-orange-400 to-orange-300 bg-clip-text text-transparent font-sans block mt-2">
+              Corporate Network
+            </span>
+            <span className="bg-gradient-to-r from-gray-100 via-white to-gray-100 bg-clip-text text-transparent font-sans block mt-2">
+              Broadcasting Cinema
+            </span>
+          </h1>
+        </div>
+
+        {/* Subheadline with description */}
+        <p className="text-lg md:text-xl text-gray-300 mb-12 tracking-wide text-center max-w-2xl leading-relaxed font-light">
+          Crafting premium film production and broadcasting experiences with excellence and innovation at every frame.
+        </p>
+
+        {/* Divider */}
+        <div className="w-24 h-px bg-gradient-to-r from-transparent via-orange-500/50 to-transparent mb-12"></div>
+
+        {/* Two Button Layout - Enhanced */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10 w-full max-w-3xl">
+          {/* CNBC Button */}
+          <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
+            <p className="text-gray-400 text-sm font-light uppercase tracking-widest">Explore</p>
+            <button
+              onClick={handleCNBCRedirect}
+              className="group relative w-full sm:w-auto px-12 py-5 bg-gradient-to-r from-orange-600 to-orange-500 text-white text-lg md:text-xl font-bold rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_60px_rgba(255,140,0,0.6)] hover:scale-105 active:scale-95 min-w-[200px] uppercase tracking-wide"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                CNBC Productions
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-orange-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
+            <p className="text-xs text-gray-500">Premium film & broadcasting</p>
+          </div>
+
+          {/* Divider */}
+          <div className="hidden sm:block w-px h-20 bg-gradient-to-b from-transparent via-orange-500/50 to-transparent"></div>
+
+          {/* ION Plus Button */}
+          <div className="flex flex-col items-center gap-3 w-full sm:w-auto">
+            <p className="text-gray-400 text-sm font-light uppercase tracking-widest">Discover</p>
+            <button
+              onClick={handleIONRedirect}
+              className="group relative w-full sm:w-auto px-12 py-5 bg-gradient-to-r from-blue-600 to-blue-500 text-white text-lg md:text-xl font-bold rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-[0_0_60px_rgba(59,130,246,0.6)] hover:scale-105 active:scale-95 min-w-[200px] uppercase tracking-wide"
+            >
+              <span className="relative z-10 flex items-center justify-center gap-2">
+                ION Plus TV
+                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+              </span>
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            </button>
+            <p className="text-xs text-gray-500">Entertainment network</p>
+          </div>
+        </div>
+
+        {/* Bottom accent */}
+        <div className="w-32 h-1.5 bg-gradient-to-r from-transparent via-orange-500 to-transparent mt-16 rounded-full"></div>
       </div>
 
-      {/* ── Navbar ── */}
-      <nav className="absolute top-0 left-0 right-0 z-30 flex items-center justify-between px-6 md:px-14 py-6">
-        {/* CNBC logo */}
-        <a href="/home" className="group flex-shrink-0">
-          <div className="px-4 py-1.5 rounded-lg bg-orange-500 group-hover:bg-orange-600 transition-colors duration-200 shadow-lg">
-            <span className="text-white text-xl font-bold tracking-tight">CNBC</span>
-          </div>
-        </a>
-
-        {/* Nav links — center */}
-        <div className="hidden lg:flex items-center gap-8">
-          {[
-            { label: "HOME", href: "/home" },
-            { label: "FILM PRODUCTION", href: "/portfolio" },
-            { label: "SPONSORS", href: "/sponsors" },
-            { label: "CONTACT", href: "/contact" },
-          ].map((item) => (
-            <a
-              key={item.href}
-              href={item.href}
-              className="relative text-white/80 hover:text-white text-xs font-semibold tracking-[0.18em] uppercase transition-colors duration-200 after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-orange-400 after:transition-all after:duration-300 hover:after:w-full"
-            >
-              {item.label}
-            </a>
-          ))}
-        </div>
-
-        {/* ION logo */}
-        <a
-          href="https://ionplustv.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group flex-shrink-0"
-        >
-          <div className="px-4 py-1.5 rounded-lg bg-white group-hover:bg-gray-100 transition-colors duration-200 shadow-lg">
-            <span className="text-blue-700 text-xl font-bold tracking-tight">ION</span>
-          </div>
-        </a>
-      </nav>
-
-      {/* ── Main hero content ── */}
-      <main className="relative z-20 flex flex-col items-center justify-center min-h-screen px-6 text-center">
-
-        {/* Thin rule above */}
-        <div className="flex items-center gap-4 mb-8">
-          <div className="h-px w-16 bg-orange-400/70" />
-          <span className="text-orange-300 text-[11px] font-semibold tracking-[0.35em] uppercase">
-            Est. 2024
-          </span>
-          <div className="h-px w-16 bg-orange-400/70" />
-        </div>
-
-        {/* Main heading */}
-        <h1
-          className="text-white font-bold leading-[1.08] tracking-tight text-balance mb-6"
-          style={{ fontSize: "clamp(2rem, 5.5vw, 5rem)", maxWidth: "900px" }}
-        >
-          Welcome to{" "}
-          <span className="block text-white">
-            Corporate Network Broadcasting Cinema
-          </span>
-        </h1>
-
-        {/* Thin divider */}
-        <div className="w-20 h-0.5 bg-orange-500 mb-8 rounded-full" />
-
-        {/* Sub-copy */}
-        <p className="text-white/65 text-base md:text-lg max-w-lg leading-relaxed mb-14 text-balance">
-          Premium film production and broadcast entertainment — crafted for global audiences.
-        </p>
-
-        {/* ── CTA buttons ── */}
-        <div className="flex flex-col sm:flex-row items-stretch gap-4 w-full max-w-sm sm:max-w-none sm:justify-center">
-
-          {/* CNBC */}
-          <a
-            href="/home"
-            className="group relative overflow-hidden rounded-2xl bg-orange-500 hover:bg-orange-600 transition-all duration-300 shadow-2xl hover:shadow-orange-500/40 hover:-translate-y-0.5 active:translate-y-0"
-            style={{ minWidth: 220 }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-orange-400/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative z-10 flex flex-col items-center px-10 py-5 gap-1">
-              <span className="text-orange-100/70 text-[10px] font-semibold tracking-[0.25em] uppercase">
-                Click here for
-              </span>
-              <span className="text-white text-2xl font-bold tracking-tight">CNBC</span>
+      {/* Footer disclaimer card */}
+      <div className="relative z-10 px-4 md:px-6 pb-8">
+        <div className="max-w-4xl mx-auto">
+          <div className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl px-6 md:px-8 py-6 shadow-2xl hover:bg-white/7 transition-colors duration-300 group">
+            <div className="flex items-start gap-4">
+              <div className="flex-shrink-0 mt-1">
+                <div className="flex items-center justify-center h-8 w-8 rounded-full bg-orange-500/20 group-hover:bg-orange-500/30 transition-colors">
+                  <svg className="w-5 h-5 text-orange-400" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+              <div className="flex-1">
+                <h3 className="text-sm md:text-base font-bold text-orange-400 mb-2 tracking-wide uppercase">Important Notice</h3>
+                <p className="text-gray-300 text-sm leading-relaxed">
+                  We are an independent film production and broadcasting company. We are not connected to or representatives of CNBC News, which is a separate entity.
+                </p>
+              </div>
             </div>
-          </a>
-
-          {/* Divider on desktop */}
-          <div className="hidden sm:flex items-center">
-            <div className="w-px h-16 bg-white/20 rounded-full" />
           </div>
-
-          {/* ION Plus */}
-          <a
-            href="https://ionplustv.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group relative overflow-hidden rounded-2xl bg-blue-700 hover:bg-blue-800 transition-all duration-300 shadow-2xl hover:shadow-blue-700/40 hover:-translate-y-0.5 active:translate-y-0"
-            style={{ minWidth: 220 }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            <div className="relative z-10 flex flex-col items-center px-10 py-5 gap-1">
-              <span className="text-blue-200/70 text-[10px] font-semibold tracking-[0.25em] uppercase">
-                Click here
-              </span>
-              <span className="text-white text-2xl font-bold tracking-tight">ION Plus</span>
-            </div>
-          </a>
-
         </div>
-
-        {/* Disclaimer */}
-        <p className="mt-12 text-white/30 text-[11px] max-w-sm leading-relaxed text-balance">
-          We are an independent film production and broadcasting company, not affiliated with or representative of CNBC News.
-        </p>
-
-      </main>
-
-      {/* ── Decorative bottom gradient bar ── */}
-      <div
-        className="absolute bottom-0 left-0 right-0 h-1 z-30"
-        style={{ background: "linear-gradient(90deg, transparent, #f97316, #ea580c, transparent)" }}
-      />
+      </div>
     </div>
   )
 }
