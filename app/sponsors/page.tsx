@@ -72,6 +72,59 @@ export default function SponsorsPage() {
         </div>
       </section>
 
+      {/* Main Sponsor Section */}
+      <section className="bg-gray-50 py-16 md:py-24">
+        <div className="container mx-auto px-6 md:px-12 lg:px-16">
+          <div className="mb-12 text-center md:mb-16">
+            <h2 className="text-4xl font-bold tracking-tight text-gray-900 md:text-5xl">
+              Our Main <span className="text-orange-600">Corporate Sponsor</span>
+            </h2>
+            <div className="mx-auto mt-4 h-1 w-24 rounded-full bg-gradient-to-r from-orange-600 to-orange-400" />
+          </div>
+
+          <div className="mx-auto max-w-6xl overflow-hidden rounded-3xl border-2 border-orange-200 bg-white shadow-xl transition-shadow duration-300 hover:shadow-2xl">
+            <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="relative min-h-[280px] overflow-hidden lg:min-h-full">
+                <img
+                  src="/practice-plus-group-team.jpeg"
+                  alt="Practice Plus Group healthcare team outside Shepton Mallet Hospital"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <div className="flex flex-col justify-center p-8 md:p-12 lg:p-14">
+                <div className="mb-7 rounded-2xl bg-gray-50 px-6 py-5 shadow-sm">
+                  <img
+                    src="/practice-plus-group-logo.webp"
+                    alt="Practice Plus Group"
+                    className="h-auto max-h-16 w-full object-contain object-left"
+                  />
+                </div>
+                <h3 className="mb-5 text-3xl font-bold tracking-tight text-gray-900 md:text-4xl">
+                  Supporting the next chapter of healthcare.
+                </h3>
+                <div className="space-y-4 text-base leading-relaxed text-gray-600 md:text-lg">
+                  <p>
+                    CNBC LLC is proud to recognise Practice Plus Group as the main sponsor of its upcoming feature film, <span className="font-semibold text-gray-900">A Beautiful Kill</span>. Their support represents a valuable partnership, bringing together creative ambition, industry collaboration and the expertise required to develop compelling screen stories.
+                  </p>
+                  <p>
+                    Practice Plus Group is a UK healthcare provider delivering hospital treatment, surgical services and diagnostics to NHS and private patients. We are pleased to acknowledge their support as part of our film&apos;s sponsorship programme.
+                  </p>
+                </div>
+                <a
+                  href="https://practiceplusgroup.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-flex w-fit items-center gap-3 rounded-full bg-orange-600 px-7 py-3.5 text-base font-bold text-white shadow-lg transition hover:bg-orange-700 hover:shadow-xl"
+                >
+                  Visit Website
+                  <ExternalLink className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Sponsor Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-16">
