@@ -26,27 +26,10 @@ export const metadata: Metadata = {
       "Corporate Network Broadcasting Cinema creates compelling feature films and broadcast content for global audiences.",
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
     title: "CNBC LLC | Film Production and Broadcasting",
     description:
       "Corporate Network Broadcasting Cinema creates compelling feature films and broadcast content for global audiences.",
-  },
-  icons: {
-    icon: [
-      {
-        url: "/icon-light-32x32.png",
-        media: "(prefers-color-scheme: light)",
-      },
-      {
-        url: "/icon-dark-32x32.png",
-        media: "(prefers-color-scheme: dark)",
-      },
-      {
-        url: "/icon.svg",
-        type: "image/svg+xml",
-      },
-    ],
-    apple: "/apple-icon.png",
   },
 }
 
