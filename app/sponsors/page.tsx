@@ -72,6 +72,58 @@ export default function SponsorsPage() {
         </div>
       </section>
 
+      {/* Main Sponsor Section */}
+      <section className="relative overflow-hidden bg-[#120d1f] py-16 md:py-24">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_20%,rgba(126,73,171,0.28),transparent_34%),radial-gradient(circle_at_85%_80%,rgba(245,130,32,0.16),transparent_36%)]" />
+        <div className="relative z-10 container mx-auto px-6 md:px-12 lg:px-16">
+          <div className="mx-auto max-w-6xl overflow-hidden rounded-[2rem] border border-white/15 bg-white/[0.07] shadow-2xl backdrop-blur-sm">
+            <div className="grid lg:grid-cols-[1.05fr_0.95fr]">
+              <div className="relative min-h-[280px] overflow-hidden lg:min-h-full">
+                <img
+                  src="/practice-plus-group-team.jpeg"
+                  alt="Practice Plus Group healthcare team outside Shepton Mallet Hospital"
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#120d1f]/75 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 rounded-full border border-white/20 bg-black/30 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/85 backdrop-blur-md">
+                  Main sponsor
+                </div>
+              </div>
+              <div className="flex flex-col justify-center p-8 md:p-12 lg:p-14">
+                <p className="mb-4 text-sm font-bold uppercase tracking-[0.28em] text-orange-300">Main sponsor</p>
+                <div className="mb-7 rounded-2xl bg-white px-6 py-5 shadow-lg">
+                  <img
+                    src="/practice-plus-group-logo.webp"
+                    alt="Practice Plus Group"
+                    className="h-auto max-h-16 w-full object-contain object-left"
+                  />
+                </div>
+                <h2 className="mb-5 text-3xl font-bold tracking-tight text-white md:text-4xl">
+                  Supporting the next chapter of healthcare.
+                </h2>
+                <div className="space-y-4 text-base leading-relaxed text-white/75 md:text-lg">
+                  <p>
+                    CNBC LLC is proud to recognise Practice Plus Group as the main sponsor of its upcoming feature film, <span className="font-semibold text-white">A Beautiful Kill</span>. Their support represents a valuable partnership, bringing together creative ambition, industry collaboration and the expertise required to develop compelling screen stories.
+                  </p>
+                  <p>
+                    Practice Plus Group is a UK healthcare provider delivering hospital treatment, surgical services and diagnostics to NHS and private patients. We are pleased to acknowledge their support as part of our film&apos;s sponsorship programme.
+                  </p>
+                </div>
+                <a
+                  href="https://practiceplusgroup.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-8 inline-flex w-fit items-center gap-3 rounded-full bg-orange-500 px-7 py-3.5 text-base font-bold text-white shadow-lg transition hover:bg-orange-400 hover:shadow-orange-500/30"
+                >
+                  Visit Website
+                  <ExternalLink className="h-5 w-5" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Sponsor Section */}
       <section className="py-16 md:py-24 bg-white">
         <div className="container mx-auto px-6 md:px-12 lg:px-16">
